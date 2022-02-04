@@ -1,17 +1,68 @@
 ---
 title: "Botany563 README"
 output:
-  html_document:
-    rmdformats::downcute
-  toc: true
-  toc_float: true
+  html_document: rmdformats::downcute
+  toc: yes
+  toc_float: yes
+  pdf_document: default
 ---
 
-```{r knitr setup, include=FALSE,  eval=TRUE, echo=FALSE, warning=FALSE}
-library(knitr)
-knitr::opts_chunk$set(eval=TRUE, cache=FALSE, message=FALSE, warning=FALSE,
-                      comment = "", results="markup")
+# Botany563
+
+## Basics of Git
+
+### Dealing with git conflicts
+
+```
+nano best-books.md 
+
+git add .
+
+git commit -m "maggie's book"
+
+git push
+
+git remote add upstream https://github.com/crsl4/phylo-class-social
 ```
 
-# Botany563
+This will produce errors:
+```
+git pull upstream master
+```
+
+To fix it, change the file however you want it to look using nano. Then repeat:
+
+```
+nano best-books.md 
+
+git add .
+
+git commit -m "maggie's book"
+
+git push
+```
+THEN, go to github website and request pull from your own account
+
+Can use this to go back to before you made a change if you haven't done git add:
+```
+git checkout --
+```
+
+Look at git config
+```
+git config -v
+```
+
+See what git channels you are connected to:
+```
+git remote -v
+```
+
+If upstream channel is not the one you expect (in our case /crsl4/phylo-class-social), use this to change:
+```
+git remote add upstream https://github.com/crsl4/phylo-class-social
+```
+
+
+
 
