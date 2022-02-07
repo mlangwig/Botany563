@@ -7,12 +7,9 @@ output:
   pdf_document: default
 ---
 
-# Botany563
+Link to Claudia's helpful guide: [mindful-programming](https://github.com/crsl4/mindful-programming/blob/master/lecture.md)
 
-## Basics of Git
-
-### Dealing with git conflicts
-
+# Dealing with git conflicts
 ```
 nano best-books.md 
 
@@ -48,6 +45,7 @@ Can use this to go back to before you made a change if you haven't done git add:
 git checkout --
 ```
 
+# Basics of Git
 Look at git config
 ```
 git config -v
@@ -62,7 +60,6 @@ If upstream channel is not the one you expect (in our case /crsl4/phylo-class-so
 ```
 git remote add upstream https://github.com/crsl4/phylo-class-social
 ```
-
 
 
 
