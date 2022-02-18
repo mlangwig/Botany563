@@ -101,4 +101,52 @@ git push
 
 Now go to the Github website, go to the file that you changed in your forked git repo, click Pull Requests in the top left corner, New pull request (this should show you the changes you made in the file), and then Create pull request
 
+# dsrC class project
+
+Justification: DsrC is a small protein that partners with DsrAB to catalyze dissimilatory sulfur cycling. DsrC is part of a superfamily of proteins that have different names and completely different functions (TusE for biosynthesis of 2-thiouridine, RspA for regulation of gene expression). One way to distinguish between them and find out what function you have is to make a phylogeny.
+My phylogeny will include a viral dsrC/tusE that I identified in a virus integrated with Marinobacter to see how it is related to other Marinobacter and viral dsr/tus/rspA sequences.
+
+## Acquire the sequences
+1. Get known dsrCs and known tusE references from Uniprot:
+[Uniprot search results](https://www.uniprot.org/blast/uniprot/B202202144ABAA9BC7178C81CEBC9459510EDDEA302E3E7D)
+
+2. Download all Marinobacter genomes in NCBI, will search these for dsrC:
+[NCBI search results](https://www.ncbi.nlm.nih.gov/datasets/genomes/?taxon=2742&utm_source=gquery&utm_medium=referral)
+
+3. Obtained viral reference sequences of dsrC/tusE from Kris in my lab
+
+4. Get reference sequences from [Venceslau et al., 2014](https://www.sciencedirect.com/science/article/pii/S0005272814000942#f0025)
+
+5. 3 viral sequences identified from hydrothermal plume metagenomes using [VIBRANT](https://microbiomejournal.biomedcentral.com/articles/10.1186/s40168-020-00867-0)
+
+### Identify dsrC/tusE from Marinobacter genomes
+Run the hmmsearch using custom sulfur hmm database from our lab
+```
+for file in sulfur_hmms/*.hmm; do hmmsearch --cut_tc --cpu 15 --tblout $file.txt $file Marinobacter_344genomes.faa; echo "next hmm"; done
+```
+
+Paste list of hits into a txt file for extracting seqs
+```
+nano dsrC_Marinobacter_list.txt
+```
+
+Extract them from the genomes
+```
+perl /storage1/data12/scripts/screen_list_new.pl dsrC_Marinobacter_list.txt ../346_Marinobacter.faa keep > dsrC_Marinobacter.faa
+```
+
+## Sequence Totals
+In total have:
+    + 342 seqs from Marinobacter ref genomes: dsrC_Marinobacter.faa
+    + 250 refs downloaded from Uniprot: uniprot_dsrC_seqs.faa
+    + 138 IMGVR refs from Kris through teams: DsrC_IMGVR.faa
+    + 3 dsrCs from VIBRANT characterizations: dsrC_3viruses.faa
+    + 76 dsrC references from Venceslau et al: Venceslau_76_dsrC.faa 
+    
+Cat them all for final set:
+```
+cat *.faa > dsrC_PlumeViruses_uniprot.faa
+```
+
+
 
