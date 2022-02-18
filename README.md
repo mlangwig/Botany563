@@ -120,6 +120,12 @@ My phylogeny will include a viral dsrC/tusE that I identified in a virus integra
 5. 3 viral sequences identified from hydrothermal plume metagenomes using [VIBRANT](https://microbiomejournal.biomedcentral.com/articles/10.1186/s40168-020-00867-0)
 
 ### Identify dsrC/tusE from Marinobacter genomes
+Confirm that the genome set you have is actually Marinobacter according to [GTDBtk](https://academic.oup.com/bioinformatics/article/36/6/1925/5626182)
+```
+gtdbtk classify_wf --genome_dir /storage1/data12/Plume_Viruses/Marinobacter_MAGs/fna --out_dir GTDB -x fna --cpus 10 --pplacer_cpus 10 --tmpdir /storage1/data12/tmp/
+```
+This resulted in a final set of 344 Marinobacter genomes, compared to the 346 downloaded
+
 Run the hmmsearch using custom sulfur hmm database from our lab
 ```
 for file in sulfur_hmms/*.hmm; do hmmsearch --cut_tc --cpu 15 --tblout $file.txt $file Marinobacter_344genomes.faa; echo "next hmm"; done
@@ -147,6 +153,7 @@ Cat them all for final set:
 ```
 cat *.faa > dsrC_PlumeViruses_uniprot.faa
 ```
+
 
 
 
