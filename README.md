@@ -143,17 +143,33 @@ perl /storage1/data12/scripts/screen_list_new.pl dsrC_Marinobacter_list.txt ../3
 
 ## Sequence Totals
 In total have:
-    + 342 seqs from Marinobacter ref genomes: dsrC_Marinobacter.faa
-    + 250 refs downloaded from Uniprot: uniprot_dsrC_seqs.faa
-    + 138 IMGVR refs from Kris through teams: DsrC_IMGVR.faa
-    + 3 dsrCs from VIBRANT characterizations: dsrC_3viruses.faa
-    + 76 dsrC references from Venceslau et al: Venceslau_76_dsrC.faa 
+
+* 342 seqs from Marinobacter ref genomes: dsrC_Marinobacter.faa
+* 250 refs downloaded from Uniprot: uniprot_dsrC_seqs.faa
+* 138 IMGVR refs from Kris through teams: DsrC_IMGVR.faa
+* 3 dsrCs from VIBRANT characterizations: dsrC_3viruses.faa
+* 76 dsrC references from Venceslau et al: Venceslau_76_dsrC.faa 
     
-Cat them all for final set:
+Cat them all for final set of 809 sequences:
 ```
 cat *.faa > dsrC_PlumeViruses_uniprot.faa
 ```
 
+## Alignments
 
+1. Starting with [ClustalW](https://www.ncbi.nlm.nih.gov/labs/pmc/articles/PMC308517/), default parameters
+
+```
+clustalw -INFILE=dsrC_PlumeViruses_uniprot.faa -align -OUTFILE=dsrC_PlumeViruses_uniprot_clustalw.faa -OUTPUT=FASTA
+```
+
+2. Trying out [MAFFT](https://academic.oup.com/mbe/article/30/4/772/1073398?login=true) because it is commonly used in my lab and I want to learn more about it. In the help page they suggest using hte --auto option if you don't know which of their high accuracy options to use so trying that:
+
+```
+mafft --auto dsrC_PlumeViruses_uniprot.faa > mafft_alignment/dsrC_PlumeViruses_uniprot_mafftAuto.faa
+```
+
+They are noticeably different when previewing:
+![Alignments](clustalw_mafft_comparison.png "Alignment comparison")
 
 
