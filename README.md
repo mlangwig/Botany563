@@ -163,7 +163,7 @@ cat *.faa > dsrC_PlumeViruses_uniprot.faa
 clustalw -INFILE=dsrC_PlumeViruses_uniprot.faa -align -OUTFILE=dsrC_PlumeViruses_uniprot_clustalw.faa -OUTPUT=FASTA
 ```
 
-2. Trying out [MAFFT](https://academic.oup.com/mbe/article/30/4/772/1073398?login=true) because it is commonly used in my lab and I want to learn more about it. In the help page they suggest using hte --auto option if you don't know which of their high accuracy options to use so trying that:
+2. Trying out [MAFFT](https://academic.oup.com/mbe/article/30/4/772/1073398?login=true) because it is commonly used in my lab and I want to learn more about it. In the help page they suggest using the --auto option if you don't know which of their high accuracy options to use so trying that:
 
 ```
 mafft --auto dsrC_PlumeViruses_uniprot.faa > mafft_alignment/dsrC_PlumeViruses_uniprot_mafftAuto.faa
