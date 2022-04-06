@@ -8,7 +8,9 @@ library(ape)
 library(adegenet)
 library(phangorn)
 
-###################### DISTANCE BASED METHOD ######################
+################################### DISTANCE BASED METHODS ###################################
+
+###################### Neighbor Joining Method ######################
 
 #####################DNA example
 dna <- fasta2DNAbin("http://adegenet.r-forge.r-project.org/files/usflu.fasta")
@@ -36,7 +38,7 @@ tre_aa <- ladderize(tre_aa)
 plot(tre_aa, cex=.2)
 title("A simple NJ tree")
 
-###################### PARSIMONY METHOD ######################
+###################### Maximum Parsimony Method ######################
 
 #####################DNA example
 dna2 <- as.phyDat(dna)

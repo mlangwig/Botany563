@@ -172,4 +172,27 @@ mafft --auto dsrC_PlumeViruses_uniprot.faa > mafft_alignment/dsrC_PlumeViruses_u
 They are noticeably different when previewing:
 ![Alignments](clustalw_mafft_comparison.png "Alignment comparison")
 
+## Phylogenies
 
+### Distance trees
+Distance trees fit a tree to a matrix of pairwise genetic distances. First, pairwise distances are calculated based on the fraction of positions in which the two sequences differ. Next, this dissimilarity is converted into an evolutionary distance by applying an evolutionary model (e.g., Jukes Cantor) to estimate the number of substitutions that occurred. Finally, the tree topology can be inferred on the basis of the estimated 
+evolutionary distances.
+
+Neighbor Joining: [explanation of method]
+
+
+| Method      | Strengths   | Limitations  |  Assumptions   | Why method is a good choice  |
+| ----------- | ----------- | ----------- |  -----------  |  -----------  |
+| Neighbor Joining |  Produce optimum tree without having to search the tree space |             |              |               |
+
+Relevant links and references:
+
+### Parsimony trees
+
+Maximum Parsimony: [explanation of method]
+
+| Method      | Strengths   | Limitations  |  Assumptions   | Why method is a good choice  |
+| ----------- | ----------- | ----------- |  -----------  |  -----------  |
+| Maximum Parsimony |         |             |              |               |
+
+Relevant links and references:
