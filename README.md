@@ -172,27 +172,34 @@ mafft --auto dsrC_PlumeViruses_uniprot.faa > mafft_alignment/dsrC_PlumeViruses_u
 They are noticeably different when previewing:
 ![Alignments](clustalw_mafft_comparison.png "Alignment comparison")
 
-## Phylogenies
+## **Phylogenies**
 
-### Distance trees
+### **Distance trees**
 Distance trees fit a tree to a matrix of pairwise genetic distances. First, pairwise distances are calculated based on the fraction of positions in which the two sequences differ. Next, this dissimilarity is converted into an evolutionary distance by applying an evolutionary model (e.g., Jukes Cantor) to estimate the number of substitutions that occurred. Finally, the tree topology can be inferred on the basis of the estimated 
 evolutionary distances.
 
-Neighbor Joining: [explanation of method]
+**Neighbor Joining**: [explanation of method]
 
+**Method**|**Strengths**|**Limitations**|**Assumptions**|**Why method is a good choice**
+:-----:|:-----:|:-----:|:-----:|:-----:
+| Neighbor Joining | •Can produce optimum tree without having to search the tree space <br /> •Fast | •Does not have model flexibility <br /> •Less statistical power because NJ reduces phylogenetic info to 1 value per pair of sequences (non-character based) |  •Your chosen evolutionary model is valid <br /> •Distance calculations are accurate (can be affected by noisy distances)    |          |
 
-| Method      | Strengths   | Limitations  |  Assumptions   | Why method is a good choice  |
-| ----------- | ----------- | ----------- |  -----------  |  -----------  |
-| Neighbor Joining |  Produce optimum tree without having to search the tree space |             |              |               |
+Relevant links and references:
+
+* [Saitou and Nei, 1987](https://pubmed.ncbi.nlm.nih.gov/3447015/)
+
+### **Parsimony trees**
+
+**Maximum Parsimony**: This method seeks to minimize the evolutionary change required to explain the data. In other words, the tree with the fewest common ancestors in most likely. It does not rely on models of evolution and is a character-based method (utilizes 4 nucleotides or 20 amino acids).
+
+**Method**|**Strengths**|**Limitations**|**Assumptions**|**Why method is a good choice**
+:-----:|:-----:|:-----:|:-----:|:-----:
+| Maximum Parsimony | •Intuitive and simple criterion for tree building | •Produce inconsistent trees (especially when there is long branch attraction) <br /> •Limited use for large trees (>1000 taxa) because finding most parsimonious tree becomes NP-hard <br /> •Often underestimates actual evolutionary change | Independence among characters |   |
 
 Relevant links and references:
 
-### Parsimony trees
+* [Camin and Sokal, 1965](https://www.jstor.org/stable/pdf/2406441.pdf)
+* [Felsenstein, 1978](https://watermark.silverchair.com/27-4-401.pdf?token=AQECAHi208BE49Ooan9kkhW_Ercy7Dm3ZL_9Cf3qfKAc485ysgAAAugwggLkBgkqhkiG9w0BBwagggLVMIIC0QIBADCCAsoGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQM6zvVOy7HsYFR1i6FAgEQgIICmzHtLDuAfOznd9eXR7Uu2GWcqsZiH3ilRhS72EkF3mteNNDTx-ibu1VcO0yUC-QNdF_f01vViCT2u4UlofQl36h2kN7WpLG_fPSHg_U_cnOJ_CXUxfk1XhBZ6Ng8mgEHmNJMOwj6meuso4IAxP5iRoPU7EaPLiuEBtYukXu-d9BuIlpSQT2-PDIwozhiLsXyxGUFyEX77nce4ldL0RiZryBC5k8JIOKUaXiXZ-OmNjcV7dhrIsHFxlH3gn5Aubjr43m-JEW0TEQ9swS9HWFcQUQ51D7K3Fy6g8-lXvknXNwuZLMZEI5XJBI4vlTzCKMQ_DYNipfQXkdeUYD2dK868G_rjvUSALZGf-6Zu5U6xxYRRYijiczI5SQYNY2pLPzdafTN16aTcydeBZfkcH7TLcGGDzd1Q0huby0IXBvCdX6rYvM8uI2OlCngEnHCO-mHD4sjlqEk7IKtNP0Gj3OONOsuq79bNsanetcJciTULVGdbyjXFJbDdE3FSgPyyYziyEiLVZcM64alaMR7o6L80ZXBhDrSQt0GUZIMAZdpFYdrawMhrBws13M8N7FgT_aMJLLRDooucgSu6j8MgOfJQaWFpf2z3vDMu4uiyYLbSRfaPLdd3omJHAj3wjngywXeMLF7ZSvVds_DTsR6YbCBrkPbeJQjaEfyQ6SAqgYeWsteuhotHsJDIdDmmba6jCNAUVw7zq4eEfMptE9kBvhUL7PTyi-wcuVr-1VvZJm3pmBCsM5qLLMumJMMWACUcEt5bjEarVukSYX3Hm_pTB6WXfTFIR-3IbI3YwctcxGNnc05ug5gON_dMONOaS0wC78htr8vmoMbIZqChNd-bVSZ9VyiZS5EFVP_XWt3XjnLqfdF6wIBo05Df8mzWJM)
 
-Maximum Parsimony: [explanation of method]
 
-| Method      | Strengths   | Limitations  |  Assumptions   | Why method is a good choice  |
-| ----------- | ----------- | ----------- |  -----------  |  -----------  |
-| Maximum Parsimony |         |             |              |               |
 
-Relevant links and references:

@@ -15,6 +15,13 @@ library(phangorn)
 #####################DNA example
 dna <- fasta2DNAbin("http://adegenet.r-forge.r-project.org/files/usflu.fasta")
 #calculate distances
+
+#First, pairwise distances are calculated. Then, the TN93 model is used to convert the
+#pairwise distance into an evolutionary distance. TN93 is the Tamura-Nei model that
+#accounts for the difference between transitions and transversions and differentiates 
+#the two kinds of transitions (purine to purine & pyrimidine to pyrimidine).
+#TN93 is chosen for this data as an example, may need to choose another model for DNA
+#sequence data in the future.
 D <- dist.dna(dna, model="TN93")
 
 #classical neighbor joining algorithm
@@ -29,8 +36,15 @@ title("A simple NJ tree")
 aa_alignment <- read.phyDat("dsrC_PlumeViruses_uniprot_mafft.faa", format = "fasta",
                             type = "AA")
 #calculate distance
+
+# In my amino acid data, the LG model is used to convert the pairwise distance into an 
+#evolutionary distance. LG is the Le and Gascuel model that accounts for variability 
+#of evolutionary rates across sites. It was tested using a larger and more diverse 
+#sequence database compared to WAG. I chose this model because it was identified
+#by IQ-Tree to be the best-fit model. LG paper: http://www.atgc-montpellier.fr/download/papers/lg_2008.pdf
+
 aa <- as.AAbin(aa_alignment) #create AAbin object
-D_aa <- dist.aa(aa)
+D_aa <- dist.ml(aa, model = "LG") #calculate the pairwise distance using LG model
 
 tre_aa <- nj(D_aa)
 tre_aa <- ladderize(tre_aa)
@@ -53,12 +67,12 @@ plot(tre.pars, cex=0.4)
 
 ##################### Protein, my data
 
-aa2 <- as.phyDat.AAbin(aa)
+aa2 <- as.phyDat.AAbin(aa) #create AAbin object
 
-tre.ini_aa <- nj(dist.aa(aa))
-parsimony(tre.ini_aa, aa2)
+tre.ini_aa <- nj(dist.aa(aa)) ##generate starting tree for search on tree space
+parsimony(tre.ini_aa, aa2) #compute parsimony score of this tree
 
-tre.pars_aa <- optim.parsimony(tre.ini_aa, aa2)
+tre.pars_aa <- optim.parsimony(tre.ini_aa, aa2) #search for tree with optimum parsimony
 plot(tre.pars_aa, cex=0.2)
 
 ####Experimenting with writing tree files and trying to plot trees side by side
