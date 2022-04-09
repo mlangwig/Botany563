@@ -1,3 +1,0 @@
-Method	Strengths	Limitations	Assumptions	Why method is a good choice
-Neighbor Joining	Produce optimum tree without having to search the tree space	Does not have model flexibility		Fast
-		Less statistical power because NJ reduces phylogenetic info to 1 value per pair of sequences		Simple and easy to understand method

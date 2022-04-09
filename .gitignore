@@ -26,7 +26,6 @@ data/*
 
 # Logs and databases #
 ######################
-*.log
 *.sql
 *.sqlite
 
@@ -145,6 +144,7 @@ Backup[ ]of[ ]*.numbers/
 *.dat
 *.paml
 *fastq*
+*.mldist
 
 ### Mathematica
 *.nb
