@@ -1,0 +1,30 @@
+Marinobacter salarius SZUA-1276|SZUA-1276 02732
+GCF 902506385.1 NZ LR733269.1 3435 # 3778143 # 3778460 # -1 # ID=2 3435-partial=00-start type=ATG-rbs motif=3Base/5BMM-rbs spacer=13-15bp-gc cont=0.491
+GCF 902498775.1 NZ LR701486.1 1276 # 1364284 # 1364601 # 1 # ID=3 1276-partial=00-start type=ATG-rbs motif=3Base/5BMM-rbs spacer=13-15bp-gc cont=0.491
+GCF 900114695.1 IMG-taxon 2619618959 annotated assembly NZ FOTV01000040.1 9 # 5049 # 5366 # 1 # ID=50 9-partial=00-start type=ATG-rbs motif=3Base/5BMM-rbs spacer=13-15bp-gc cont=0.491
+GCF 018424725.1 ASM1842472v1 NZ QTNR01000034.1 9 # 4824 # 5141 # 1 # ID=27 9-partial=00-start type=ATG-rbs motif=3Base/5BMM-rbs spacer=13-15bp-gc cont=0.494
+GCF 003997005.1 ASM399700v1 NZ RPOA01000001.1 1227 # 1311008 # 1311325 # 1 # ID=1 1227-partial=00-start type=ATG-rbs motif=3Base/5BMM-rbs spacer=13-15bp-gc cont=0.494
+GCF 002116735.1 ASM211673v1 NZ CP020931.1 2073 # 2276348 # 2276665 # -1 # ID=1 2073-partial=00-start type=ATG-rbs motif=3Base/5BMM-rbs spacer=13-15bp-gc cont=0.494
+GCA 902506385.1 LR733269.1 3434 # 3778143 # 3778460 # -1 # ID=2 3434-partial=00-start type=ATG-rbs motif=3Base/5BMM-rbs spacer=13-15bp-gc cont=0.491
+GCA 902498775.1 LR701486.1 1276 # 1364284 # 1364601 # 1 # ID=3 1276-partial=00-start type=ATG-rbs motif=3Base/5BMM-rbs spacer=13-15bp-gc cont=0.491
+GCA 900114695.1 IMG-taxon 2619618959 annotated assembly FOTV01000040.1 9 # 5049 # 5366 # 1 # ID=50 9-partial=00-start type=ATG-rbs motif=3Base/5BMM-rbs spacer=13-15bp-gc cont=0.491
+LauBasin.TahiMoana~~k95 155757 flag=0 multi=26.3053 len=244348 fragment 1 160
+LauBasin.Mariner~~k95 182687 flag=0 multi=38.4736 len=153290 fragment 1 31
+GCF 001924925.1 ASM192492v1 NZ LQXJ01000019.1 43 # 39962 # 40279 # 1 # ID=19 43-partial=00-start type=ATG-rbs motif=3Base/5BMM-rbs spacer=13-15bp-gc cont=0.494
+GCF 000744695.1 ASM74469v1 NZ JQMK01000006.1 178 # 184630 # 184947 # 1 # ID=6 178-partial=00-start type=ATG-rbs motif=3Base/5BMM-rbs spacer=13-15bp-gc cont=0.497
+Ga0098053 1001797 10
+Ga0098055 1003148 5
+YP 001219620.1 intracellular sulfur oxidation protein DsrC dsrC
+YP 904052.1 DsrC family protein dsrC
+GBIDBA 10002116 29
+GuaymasBasin~~k95 681605 flag=0 multi=13.0691 len=13516 8
+Ga0052187 10048 89
+Ga0052187 10045 90
+Ga0052187 10089 129
+Ga0052187 10086 104
+Ga0052187 10083 110
+Ga0052187 10081 117
+Abe 10000200 61
+KiloMoana 10000372 12
+TahiMoana 1000070 23
+Mariner 1000289 25

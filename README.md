@@ -155,12 +155,36 @@ Cat them all for final set of 809 sequences:
 cat *.faa > dsrC_PlumeViruses_uniprot.faa
 ```
 
+### Sequence Totals after initial trees
+
+The initial trees I generated showed that there were more sequences in the analysis than necessary so I have decided to cut down the sequence total.
+
+I used the following command to subset my references:
+```
+perl ~/Google\ Drive/My\ Drive/scripts/screen_list_new.pl seqs_to_keep.txt dsrC_IMGVR_Marino_uniprot.faa keep > dsrC_25Refs.faa
+```
+
+The new totals are as follows:
+
+* 25 Marinobacter, Uniprot, and virus references: dsrC_25Refs.faa
+* 3 dsrCs from VIBRANT characterizations: dsrC_3viruses.faa
+* 76 dsrC references from Venceslau et al: Venceslau_76_dsrC.faa 
+
+Then cat for a total of 104 sequences:
+```
+cat Venceslau_76_dsrC.faa dsrC_25Refs.faa dsrC_3viruses.faa > dsrC_PlumeViruses_Refs.faa
+```
+
 ## Alignments
 
-1. Starting with [ClustalW](https://www.ncbi.nlm.nih.gov/labs/pmc/articles/PMC308517/), default parameters
+1. Using [ClustalW](https://www.ncbi.nlm.nih.gov/labs/pmc/articles/PMC308517/), default parameters because unsure what options to select.
 
 ```
 clustalw -INFILE=dsrC_PlumeViruses_uniprot.faa -align -OUTFILE=dsrC_PlumeViruses_uniprot_clustalw.faa -OUTPUT=FASTA
+```
+
+```
+clustalw -INFILE=dsrC_PlumeViruses_Refs.faa -align -OUTFILE=dsrC_PlumeViruses_uniprot_clustalw.faa -OUTPUT=FASTA
 ```
 
 2. Trying out [MAFFT](https://academic.oup.com/mbe/article/30/4/772/1073398?login=true) because it is commonly used in my lab and I want to learn more about it. In the help page they suggest using the --auto option if you don't know which of their high accuracy options to use so trying that:
