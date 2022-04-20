@@ -1,5 +1,6 @@
 ---
 title: "Botany563 README"
+author: Marguerite V. Langwig
 output:
   html_document: rmdformats::downcute
   toc: yes
@@ -175,26 +176,109 @@ Then cat for a total of 104 sequences:
 cat Venceslau_76_dsrC.faa dsrC_25Refs.faa dsrC_3viruses.faa > dsrC_PlumeViruses_Refs.faa
 ```
 
-## Alignments
+Replace spaces with underscores to preserve names:
+```
+sed 's/ /_/g' dsrC_PlumeViruses_Refs.faa > dsrC_PlumeViruses_Refs_renamed.faa
+```
 
-1. Using [ClustalW](https://www.ncbi.nlm.nih.gov/labs/pmc/articles/PMC308517/), default parameters because unsure what options to select.
+## **Alignments**
+
+**Remember: there is no perfect alignment method and there is no fully automatic method (manual curation is always required). Every alignment is wrong but some are useful.**
+
+### **Progressive alignments**
+Progressive alignments combine pairwise alignments (constructed using Needleman-Wunsch), starting with the most similar pair and progressing to the most distantly related pair. This is done to give more weight to closely related sequences. Why? Imagine you align sequence A and B, which are closely related, and introduce a gap in the alignment. Now you add a third sequence, C, which is more distantly related and rearranges the position of the gap and introduces several more gaps. This is problematic because the alignment is now being optimized for a distantly related sequence, rather than the closely related sequences which are higher confidence. Progressive methods address this by keeping gaps introduced from the initial most closely related sequences and favoring more gaps/changes when adding later and more distantly related sequences.
+
+In the first stage of progressive alignments, standard pairwise alignment (Needleman-Wunsch) is completed. For every pairwise alignment, we calculate its cost based on the cost of a gap and the cost of substitution. **This is why alignment algorithms have a scoring matrix such as BLOSUM62.** 
+Alignments depend on the assumptions of the cost of substitutions and costs of gaps. Here is some info about scoring matrices: [WIS.pdf](https://bip.weizmann.ac.il/course/introbioinfo/lecture6/scoringmatrices11.pdf)
+
+Using the scored pairwise alignments, a distance matrix is calculated based on each pair of sequences. Next, a guide tree is constructed using the distance matrix and the Neighbor Joining method (or UPGMA) to represent the relationships between the sequences (which sequences are more and less closely related). Finally, the multiple sequence alignment (MSA) is built by adding sequences to the MSA according to the guide tree, in order of most closely related (at the leaves) to least closely related (at the root). 
+
+It should be noted that progressive methods are heuristics and not guaranteed to converge to a global optimum.
+
+**Method**|**Strengths**|**Limitations**|**Assumptions**
+:-----:|:-----:|:-----:|:-----:|
+| Progressive Alignment | •Fast for large number of seqs | •The guide tree has a big impact on the alignment <br /> •The guide tree is often inaccurate (because NJ or clustering) <br /> •Errors made early in the alignment persist <br /> •Poor performance with distantly related sequences |  •The NJ tree is an accurate guide tree <br /> •Sequences share a common ancestor |
+
+![](prog_align.png)
+
+Relevant links and references:
+
+* [Progressive Alignments: Feng and Doolittle, 1987](https://link.springer.com/content/pdf/10.1007/BF02603120.pdf)
+* [Lecture 5, Solis-Lemus](https://github.com/crsl4/phylogenetics-class/blob/master/lecture-notes/lecture5.md)
+
+#### **ClustalW**
+
+Dynamically varies gap penalties in a residue and position specific way.
+
+**Method**|**Strengths**|**Limitations**|**Assumptions**|**Usage notes**
+:-----:|:-----:|:-----:|:-----:|:-----:
+| ClustalW | •Fast and low RAM usage <br /> •Incorporates biologically relevant gap scoring | •Was lowest accuracy aligner in recent review (Pais et al. 2014) |  •Sites are independent | •   |
+
+References:
+
+* [ClustalW: Thompson, Higgins, and Gibson, 1994](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC308517/)
+* [Alignment Assessment: Pais et al., 2014](https://link.springer.com/article/10.1186/1748-7188-9-4#Sec12)
+* [Methods Review: Chatzou et al., 2016](https://academic.oup.com/bib/article/17/6/1009/2606431)
+
+#### **ClustalW Commands**
+Using the default parameters because unsure what options to select and I do not plan on using this alignment - I'm convinced from literature search that T-Coffee or MAFFT would be more accurate.
 
 ```
 clustalw -INFILE=dsrC_PlumeViruses_uniprot.faa -align -OUTFILE=dsrC_PlumeViruses_uniprot_clustalw.faa -OUTPUT=FASTA
 ```
 
 ```
-clustalw -INFILE=dsrC_PlumeViruses_Refs.faa -align -OUTFILE=dsrC_PlumeViruses_uniprot_clustalw.faa -OUTPUT=FASTA
+clustalw -INFILE=dsrC_PlumeViruses_Refs.faa -align -OUTFILE=dsrC_PlumeViruses_clustalw.faa -OUTPUT=FASTA
+
+clustalw -INFILE=dsrC_PlumeViruses_Refs_renamed.faa -align -OUTFILE=dsrC_PlumeViruses_Refs_renamed_clustalw.faa -OUTPUT=FASTA -STATS=dsrC_PlumeViruses_Refs_renamed_clustalw_stats.txt
 ```
+### **Iterative refinement alignment**
 
-2. Trying out [MAFFT](https://academic.oup.com/mbe/article/30/4/772/1073398?login=true) because it is commonly used in my lab and I want to learn more about it. In the help page they suggest using the --auto option if you don't know which of their high accuracy options to use so trying that:
+Improvement upon progressive alignments. These complete the same steps as progressive alignment but add on extra steps at the end to improve the alignment. This is also a heuristic method. The method improves the alignment until the alignment score can no longer be improved.
 
+**Method**|**Strengths**|**Limitations**|**Assumptions**
+:-----:|:-----:|:-----:|:-----:|
+| Iterative Alignment | •Improves upon progressive alignments by correcting errors introduced early in alignment | •Can be difficult to correct alignments built with progressive methods - not guaranteed to improve it to the true alignment |  •The NJ tree is an accurate guide tree <br /> •Sequences share a common ancestor |
+
+Relevant links and references:
+
+* [Progressive Alignments: Feng and Doolittle, 1987](https://link.springer.com/content/pdf/10.1007/BF02603120.pdf)
+* [Lecture 5, Solis-Lemus](https://github.com/crsl4/phylogenetics-class/blob/master/lecture-notes/lecture5.md)
+
+#### **MAFFT**
+
+Homologous regions identified using fast Fourier transform (FFT), where amino acid sequence is converted to a sequence composed of volume and polarity values of each amino acid residue. Has a progressive method, FFT-NS-2, AND an iterative refinement method, FFT-NS-i.
+
+![Calculation procedure for the MAFFT iterative refinement method (FFT-NS-I)](mafft_IterRefine.png)
+
+**Method**|**Strengths**|**Limitations**|**Assumptions**|**Usage notes**
+:-----:|:-----:|:-----:|:-----:|:-----:
+| MAFFT | •Faster than ClustalW and T-COFFEE <br /> •Has high accuracy options (slower, L-INS-i and G-INS-i) <br /> •Compared against other aligners and was among top performers | •Sites are independent    | •Defaults set assuming inputs are distantly related   | •BLOSUM62 matrix by default for AA, 200PAM for DNA |
+
+References:
+
+* [MAFFT: Katoh and Standley, 2013](https://academic.oup.com/mbe/article/30/4/772/1073398?login=true)
+* [MAFFT Guide: Katoh et al., 2009](https://link.springer.com/protocol/10.1007/978-1-59745-251-9_3)
+
+#### **MAFFT Commands**
+I am using MAFFT because it has been identified as a fast, higher accuracy aligner (Pais et al., 2014). In the help page they suggest using the --auto option if you don't know which of their high accuracy options to use so trying that:
 ```
 mafft --auto dsrC_PlumeViruses_uniprot.faa > mafft_alignment/dsrC_PlumeViruses_uniprot_mafftAuto.faa
 ```
 
-They are noticeably different when previewing:
-![Alignments](clustalw_mafft_comparison.png "Alignment comparison")
+```
+mafft --auto dsrC_PlumeViruses_Refs.faa > mafft_alignment/dsrC_PlumeViruses_Refs_mafftAuto.faa
+```
+
+```
+conda activate mafft_v7.490
+
+mafft --auto dsrC_PlumeViruses_Refs_renamed.faa > mafft_alignment/dsrC_PlumeViruses_Refs_renamed_mafftAuto.faa
+```
+
+![Final MAFFT Run](mafft_run.png)
+
+I downloaded the MAFFT alignment generated using the auto option and masked it in Geneious to remove columns with >50% gaps. This reduces non-informative data in the alignment and can make it easier to see when sequences are low quality or poorly aligned.
 
 ## **Phylogenies**
 
@@ -204,9 +288,9 @@ evolutionary distances.
 
 **Neighbor Joining**: [explanation of method]
 
-**Method**|**Strengths**|**Limitations**|**Assumptions**|**Why method is a good choice**
-:-----:|:-----:|:-----:|:-----:|:-----:
-| Neighbor Joining | •Can produce optimum tree without having to search the tree space <br /> •Fast | •Does not have model flexibility <br /> •Less statistical power because NJ reduces phylogenetic info to 1 value per pair of sequences (non-character based) |  •Your chosen evolutionary model is valid <br /> •Distance calculations are accurate (can be affected by noisy distances)    |          |
+**Method**|**Strengths**|**Limitations**|**Assumptions**
+:-----:|:-----:|:-----:|:-----:
+| Neighbor Joining | •Can produce optimum tree without having to search the tree space <br /> •Fast | •Does not have model flexibility <br /> •Less statistical power because NJ reduces phylogenetic info to 1 value per pair of sequences (non-character based) |  •Your chosen evolutionary model is valid <br /> •Distance calculations are accurate (can be affected by noisy distances)    |
 
 Relevant links and references:
 
@@ -216,9 +300,9 @@ Relevant links and references:
 
 **Maximum Parsimony**: This method seeks to minimize the evolutionary change required to explain the data. In other words, the tree with the fewest common ancestors in most likely. It does not rely on models of evolution and is a character-based method (utilizes 4 nucleotides or 20 amino acids).
 
-**Method**|**Strengths**|**Limitations**|**Assumptions**|**Why method is a good choice**
-:-----:|:-----:|:-----:|:-----:|:-----:
-| Maximum Parsimony | •Intuitive and simple criterion for tree building | •Produce inconsistent trees (especially when there is long branch attraction) <br /> •Limited use for large trees (>1000 taxa) because finding most parsimonious tree becomes NP-hard <br /> •Often underestimates actual evolutionary change | Independence among characters |   |
+**Method**|**Strengths**|**Limitations**|**Assumptions**
+:-----:|:-----:|:-----:|:-----:
+| Maximum Parsimony | •Intuitive and simple criterion for tree building | •Produce inconsistent trees (especially when there is long branch attraction) <br /> •Limited use for large trees (>1000 taxa) because finding most parsimonious tree becomes NP-hard <br /> •Often underestimates actual evolutionary change | Independence among characters |
 
 Relevant links and references:
 
