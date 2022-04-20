@@ -33,7 +33,7 @@ plot(tre, cex=.4)
 title("A simple NJ tree")
 
 ##################### Protein, my data
-aa_alignment <- read.phyDat("dsrC_PlumeViruses_uniprot_mafft.faa", format = "fasta",
+aa_alignment <- read.phyDat("input/dsrC_PlumeViruses_Refs_renamed_mafftAuto_masked.fasta", format = "fasta",
                             type = "AA")
 #calculate distance
 
@@ -49,8 +49,8 @@ D_aa <- dist.ml(aa, model = "LG") #calculate the pairwise distance using LG mode
 tre_aa <- nj(D_aa)
 tre_aa <- ladderize(tre_aa)
 
-plot(tre_aa, cex=.2)
-title("A simple NJ tree")
+plot(tre_aa, cex=.4)
+title("DsrC Neighbor Joining tree")
 
 ###################### Maximum Parsimony Method ######################
 
@@ -73,7 +73,8 @@ tre.ini_aa <- nj(dist.aa(aa)) ##generate starting tree for search on tree space
 parsimony(tre.ini_aa, aa2) #compute parsimony score of this tree
 
 tre.pars_aa <- optim.parsimony(tre.ini_aa, aa2) #search for tree with optimum parsimony
-plot(tre.pars_aa, cex=0.2)
+plot(tre.pars_aa, cex=0.25)
+title("DsrC Maximum Parsimony tree")
 
 ####Experimenting with writing tree files and trying to plot trees side by side
 
