@@ -1,0 +1,577 @@
+IQ-TREE 2.0.3 built Dec 20 2020
+
+Input file name: dsrC_PlumeViruses_Refs_renamed_mafftAuto_masked.fasta
+Type of analysis: ModelFinder + tree reconstruction + ultrafast bootstrap (1000 replicates)
+Random seed number: 963439
+
+REFERENCES
+----------
+
+To cite IQ-TREE please use:
+
+Bui Quang Minh, Heiko A. Schmidt, Olga Chernomor, Dominik Schrempf,
+Michael D. Woodhams, Arndt von Haeseler, and Robert Lanfear (2020)
+IQ-TREE 2: New models and efficient methods for phylogenetic inference
+in the genomic era. Mol. Biol. Evol., in press.
+https://doi.org/10.1093/molbev/msaa015
+
+To cite ModelFinder please use: 
+
+Subha Kalyaanamoorthy, Bui Quang Minh, Thomas KF Wong, Arndt von Haeseler,
+and Lars S Jermiin (2017) ModelFinder: Fast model selection for
+accurate phylogenetic estimates. Nature Methods, 14:587–589.
+https://doi.org/10.1038/nmeth.4285
+
+Since you used ultrafast bootstrap (UFBoot) please also cite: 
+
+Diep Thi Hoang, Olga Chernomor, Arndt von Haeseler, Bui Quang Minh,
+and Le Sy Vinh (2018) UFBoot2: Improving the ultrafast bootstrap
+approximation. Mol. Biol. Evol., 35:518–522.
+https://doi.org/10.1093/molbev/msx281
+
+SEQUENCE ALIGNMENT
+------------------
+
+Input data: 104 sequences with 110 amino-acid sites
+Number of constant sites: 0 (= 0% of all sites)
+Number of invariant (constant or ambiguous constant) sites: 0 (= 0% of all sites)
+Number of parsimony informative sites: 109
+Number of distinct site patterns: 110
+
+ModelFinder
+-----------
+
+Best-fit model according to BIC: LG+G4
+
+List of models sorted by BIC scores: 
+
+Model                  LogL         AIC      w-AIC        AICc     w-AICc         BIC      w-BIC
+LG+G4             -9626.898   19593.797 +    0.253   77733.797 - 1.14e-22   20052.878 +    0.999
+LG+R4             -9621.919   19593.837 +    0.248   81193.837 -        0   20066.421 -  0.00114
+LG+R5             -9619.222   19592.445 +    0.498   82604.445 -        0   20070.430 - 0.000154
+LG+R3             -9633.554   19613.107 - 1.62e-05   79817.107 -        0   20080.290 - 1.11e-06
+WAG+G4            -9659.148   19658.295 -  2.5e-15   77798.295 - 1.13e-36   20117.377 - 9.86e-15
+LG+F+G4           -9614.893   19607.786 - 0.000232   91427.786 -        0   20118.177 - 6.61e-15
+LG+R2             -9677.653   19697.305 - 8.45e-24   78521.305 - 1.13e-193   20159.088 - 8.64e-24
+VT+G4             -9688.097   19716.195 - 6.69e-28   77856.195 - 3.01e-49   20175.277 - 2.64e-27
+WAG+F+G4          -9649.337   19676.674 - 2.55e-19   91496.674 -        0   20187.065 - 7.26e-30
+JTTDCMut+G4       -9713.054   19766.108 -  9.7e-39   77906.108 - 4.37e-60   20225.189 - 3.82e-38
+JTT+G4            -9717.232   19774.464 - 1.49e-40   77914.464 -  6.7e-62   20233.546 - 5.86e-40
+rtREV+F+G4        -9674.257   19726.515 - 3.84e-30   91546.515 -        0   20236.905 - 1.09e-40
+VT+F+G4           -9683.759   19745.517 - 2.87e-34   91565.517 -        0   20255.908 - 8.17e-45
+JTTDCMut+F+G4     -9697.393   19772.786 - 3.44e-40   91592.786 -        0   20283.177 - 9.79e-51
+JTT+F+G4          -9702.822   19783.645 - 1.51e-42   91603.645 -        0   20294.036 - 4.29e-53
+rtREV+G4          -9751.919   19843.838 - 1.28e-55   77983.838 - 5.77e-77   20302.920 - 5.05e-55
+Blosum62+G4       -9759.522   19859.044 -  6.4e-59   77999.044 - 2.88e-80   20318.126 - 2.52e-58
+Dayhoff+F+G4      -9714.957   19807.914 - 8.11e-48   91627.914 -        0   20318.305 - 2.31e-58
+DCMut+F+G4        -9716.273   19810.547 - 2.17e-48   91630.547 -        0   20320.938 - 6.18e-59
+PMB+G4            -9770.521   19881.042 - 1.07e-63   78021.042 - 4.82e-85   20340.124 - 4.22e-63
+Dayhoff+G4        -9772.570   19885.141 - 1.38e-64   78025.141 -  6.2e-86   20344.223 - 5.43e-64
+DCMut+G4          -9773.905   19887.809 - 3.63e-65   78027.810 - 1.63e-86   20346.891 - 1.43e-64
+Blosum62+F+G4     -9748.224   19874.448 - 2.89e-62   91694.448 -        0   20384.839 - 8.23e-73
+PMB+F+G4          -9753.727   19885.455 - 1.18e-64   91705.455 -        0   20395.846 - 3.35e-75
+cpREV+G4          -9798.924   19937.847 - 4.94e-76   78077.847 - 2.23e-97   20396.929 - 1.95e-75
+cpREV+F+G4        -9779.159   19936.317 - 1.06e-75   91756.317 -        0   20446.708 - 3.02e-86
+mtInv+F+G4        -9857.671   20093.341 - 8.49e-110   91913.341 -        0   20603.732 - 2.42e-120
+FLU+F+G4          -9870.022   20118.044 - 3.67e-115   91938.044 -        0   20628.435 - 1.04e-125
+LG                -9917.373   20172.746 - 4.86e-127   77632.746 +        1   20629.128 - 7.39e-126
+mtZOA+F+G4        -9898.582   20175.165 - 1.45e-127   91995.165 -        0   20685.556 - 4.12e-138
+FLU+G4            -9958.453   20256.906 - 2.58e-145   78396.906 - 1.16e-166   20715.988 - 1.02e-144
+mtMet+F+G4        -9939.541   20257.082 - 2.36e-145   92077.082 -        0   20767.473 - 6.72e-156
+mtREV+F+G4        -9942.344   20262.688 - 1.43e-146   92082.688 -        0   20773.078 - 4.07e-157
+HIVb+G4           -9991.013   20322.027 - 1.86e-159   78462.027 - 8.4e-181   20781.109 - 7.35e-159
+HIVb+F+G4         -9973.334   20324.669 - 4.98e-160   92144.669 -        0   20835.060 - 1.42e-170
+mtART+F+G4       -10096.269   20570.539 - 2.03e-213   92390.539 -        0   21080.930 - 5.77e-224
+mtVer+F+G4       -10104.993   20587.986 - 3.3e-217   92407.986 -        0   21098.377 - 9.38e-228
+mtZOA+G4         -10225.211   20790.422 - 3.63e-261   78930.422 - 1.63e-282   21249.504 - 1.43e-260
+mtMAM+F+G4       -10239.115   20856.229 - 1.86e-275   92676.229 -        0   21366.620 - 5.3e-286
+mtREV+G4         -10343.220   21026.440 - 2.04e-312   79166.440 -        0   21485.522 - 8.03e-312
+HIVw+F+G4        -10320.586   21019.173 - 7.71e-311   92839.173 -        0   21529.564 - 2.19e-321
+mtMet+G4         -10434.435   21208.870 -        0   79348.870 -        0   21667.952 -        0
+mtVer+G4         -10456.063   21252.126 -        0   79392.126 -        0   21711.208 -        0
+HIVw+G4          -10498.814   21337.628 -        0   79477.628 -        0   21796.710 -        0
+mtInv+G4         -10503.048   21346.096 -        0   79486.096 -        0   21805.178 -        0
+mtART+G4         -10562.559   21465.118 -        0   79605.118 -        0   21924.199 -        0
+mtMAM+G4         -10637.637   21615.274 -        0   79755.274 -        0   22074.356 -        0
+
+AIC, w-AIC   : Akaike information criterion scores and weights.
+AICc, w-AICc : Corrected AIC scores and weights.
+BIC, w-BIC   : Bayesian information criterion scores and weights.
+
+Plus signs denote the 95% confidence sets.
+Minus signs denote significant exclusion.
+
+SUBSTITUTION PROCESS
+--------------------
+
+Model of substitution: LG+G4
+
+State frequencies: (model)
+
+Model of rate heterogeneity: Gamma with 4 categories
+Gamma shape alpha: 1.5549
+
+ Category  Relative_rate  Proportion
+  1         0.2337         0.2500
+  2         0.5974         0.2500
+  3         1.0535         0.2500
+  4         2.1154         0.2500
+Relative rates are computed as MEAN of the portion of the Gamma distribution falling in the category.
+
+MAXIMUM LIKELIHOOD TREE
+-----------------------
+
+Log-likelihood of the tree: -9607.7276 (s.e. 434.9990)
+Unconstrained log-likelihood (without tree): -517.0528
+Number of free parameters (#branches + #model parameters): 170
+Akaike information criterion (AIC) score: 19555.4551
+Corrected Akaike information criterion (AICc) score: 77695.4551
+Bayesian information criterion (BIC) score: 20014.5368
+
+**************************** WARNING ****************************
+Number of parameters (K, model parameters and branch lengths): 170
+Sample size (n, alignment length): 110
+
+Given that K>=n, the parameter estimates might be inaccurate.
+Thus, phylogenetic estimates should be interpreted with caution.
+
+Ideally, it is desirable that n >> K. When selecting optimal models,
+1. use AIC or BIC if n > 40K;
+2. use AICc or BIC if 40K >= n > K;
+3. be extremely cautious if n <= K
+
+To improve the situation (3), consider the following options:
+  1. Increase the sample size (n)
+  2. Decrease the number of parameters (K) to be estimated. If
+     possible:
+     a. Remove the least important sequences from the alignment
+     b. Specify some of the parameter values for the substitution
+        model (e.g., the nucleotide or amino acid frequencies)
+     c. Specify some of the parameter values for the rates-across-
+        sites model (e.g., the shape parameter for the discrete
+        Gamma distribution, the proportion of invariable sites, or
+        the rates of change for different rate categories under
+        the FreeRate model)
+
+Reference:
+Burnham KR, Anderson DR (2002). Model Selection and Multimodel
+Inference: A Practical Information-Theoretic Approach. Springer,
+New York.
+************************ END OF WARNING ***********************
+
+Total tree length (sum of branch lengths): 31.4312
+Sum of internal branch lengths: 13.5836 (43.2168% of tree length)
+
+WARNING: 1 near-zero internal branches (<0.0091) should be treated with caution
+         Such branches are denoted by '**' in the figure below
+
+NOTE: Tree is UNROOTED although outgroup taxon 'YP_003524119.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sideroxydans_lithotrophicus_ES-1__RspA_GroupIII' is drawn at root
+Numbers in parentheses are  ultrafast bootstrap support (%)
+
++---------YP_003524119.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sideroxydans_lithotrophicus_ES-1__RspA_GroupIII
+|
+|  +-----YP_008546905.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sulfuricella_denitrificans_skB26__RspA_GroupIII
++--| (63)
+|  +---------------------WP_020394313.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiolinea_disciformis__RspA_GroupIII
+|
+|       +----------WP_018506768.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiobacillus_thioparus__RspA_GroupIII
+|    +--| (58)
+|    |  |                                                     +--YP_003442032.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Allochromatium_vinosum_DSM_180__RspA_GroupIII
+|    |  |                                                  +--| (52)
+|    |  |                                                  |  |  +--EGV20144.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiocapsa_marina_5811__RspA_GroupIII
+|    |  |                                                  |  +--| (63)
+|    |  |                                                  |     +--YP_006413815.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiocystis_violascens_DSM_198__RspA_GroupIII
+|    |  |                                               +--| (80)
+|    |  |                                               |  +--WP_020507802.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Lamprocystis_purpurea__RspA_GroupIII
+|    |  |                                            +--| (98)
+|    |  |                                            |  +--YP_007245665.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioflavicoccus_mobilis_8321__RspA_GroupIII
+|    |  |                                   +--------| (100)
+|    |  |                                   |        +---YP_741840.1_DsrC_family_protein__Alkalilimnicola_ehrlichii_MLHE-1__RspA_GroupIII
+|    |  |                                +--| (60)
+|    |  |                                |  |               +--EHR72148.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Burkholderiales_bacterium_JOSHI_001__RspA_GroupI
+|    |  |                                |  |            +--| (55)
+|    |  |                                |  |            |  |  +----YP_008547553.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sulfuricella_denitrificans_skB26__RspA_GroupI
+|    |  |                                |  |            |  +--| (90)
+|    |  |                                |  |            |     +-----WP_018507223.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiobacillus_thioparus__RspA_GroupI
+|    |  |                                |  |   +--------| (100)
+|    |  |                                |  |   |        +--YP_003524309.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sideroxydans_lithotrophicus_ES-1__RspA_GroupI
+|    |  |                                |  +---| (89)
+|    |  |                                |      |              +--WP_020504940.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Lamprocystis_purpurea__RspA_GroupI
+|    |  |                                |      |           +--| (78)
+|    |  |                                |      |           |  |  +--YP_006412724.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiocystis_violascens_DSM_198__RspA_GroupI
+|    |  |                                |      |           |  +--| (63)
+|    |  |                                |      |           |     +--EIC21204.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiorhodovibrio_sp._970__RspA_GroupI
+|    |  |                                |      |        +--| (84)
+|    |  |                                |      |        |  +--YP_007243027.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioflavicoccus_mobilis_8321__RspA_GroupI
+|    |  |                                |      |     +--| (92)
+|    |  |                                |      |     |  +--EGV22405.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Marichromatium_purpuratum_984__RspA_GroupI
+|    |  |                                |      |  +--| (80)
+|    |  |                                |      |  |  +--WP_020393551.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiolinea_disciformis__RspA_GroupI
+|    |  |                                |      +--| (94)
+|    |  |                                |         |       +--YP_002514248.1_DsrC_family_protein__Thioalkalivibrio_sulfidiphilus_HL-EbGr7__RspA_GroupI
+|    |  |                                |         |  +----| (100)
+|    |  |                                |         |  |    |  +--WP_018232014.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_thiocyanodenitrificans__RspA_GroupI
+|    |  |                                |         |  |    +--| (56)
+|    |  |                                |         |  |       +--AHE98846.1_DsrC__Thioalkalivibrio_paradoxus_ARh_1__RspA_GroupI
+|    |  |                                |         +--| (46)
+|    |  |                                |            +-------YP_903842.1_DsrC_family_protein__Candidatus_Ruthia_magnifica_str._Cm__Calyptogena_magnifica___RspA_GroupI
+|    |  |                             +--| (35)
+|    |  |                             |  |      +--CAM77304.1_DsrC-like_protein__Magnetospirillum_gryphiswaldense_MSR-1__TusE
+|    |  |                             |  +------| (100)
+|    |  |                             |         +--------YP_002512450.1_DsrC_-like_protein__Thioalkalivibrio_sulfidiphilus_HL-EbGr7__TusE
+|    |  |                          +--| (69)
+|    |  |                          |  |            +-----CAM77890.1_DsrC-like_protein__Magnetospirillum_gryphiswaldense_MSR-1__RspA_GroupII
+|    |  |                          |  |         +--| (49)
+|    |  |                          |  |         |  |  +--YP_003525443.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sideroxydans_lithotrophicus_ES-1__RspA_GroupII
+|    |  |                          |  |         |  +--| (65)
+|    |  |                          |  |         |     +--YP_008545867.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sulfuricella_denitrificans_skB26__RspA_GroupII
+|    |  |                          |  |      +--| (87)
+|    |  |                          |  |      |  +--WP_018506850.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiobacillus_thioparus__RspA_GroupII
+|    |  |                          |  |  +---| (92)
+|    |  |                          |  |  |   |  +----------------YP_007243819.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioflavicoccus_mobilis_8321__RspA_GroupII
+|    |  |                          |  |  |   +--| (61)
+|    |  |                          |  |  |      |      +--YP_002515133.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_sulfidiphilus_HL-EbGr7__RspA_GroupII
+|    |  |                          |  |  |      +------| (100)
+|    |  |                          |  |  |             +--WP_018233019.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_thiocyanodenitrificans__TusE
+|    |  |                          |  +--| (74)
+|    |  |                          |     |                     +----WP_020503853.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Lamprocystis_purpurea__RspA_GroupII
+|    |  |                          |     |                  +--| (32)
+|    |  |                          |     |                  |  +--EGV20839.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Marichromatium_purpuratum_984__RspA_GroupII
+|    |  |                          |     |               +--| (33)
+|    |  |                          |     |               |  +--EGV20081.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiocapsa_marina_5811__RspA_GroupII
+|    |  |                          |     |            +--| (30)
+|    |  |                          |     |            |  +-------EIC22973.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiorhodovibrio_sp._970__RspA_GroupII
+|    |  |                          |     |  +---------| (100)
+|    |  |                          |     |  |         +--YP_006414739.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiocystis_violascens_DSM_198__RspA_GroupII
+|    |  |                          |     +--| (53)
+|    |  |                          |        +---------------------------WP_018233114.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_thiocyanodenitrificans__RspA_GroupII
+|    |  |                       +--| (59)
+|    |  |                       |  |  +--CAM75803.1_DsrC-like_protein__Magnetospirillum_gryphiswaldense_MSR-1__dsrC
+|    |  |                       |  +--| (76)
+|    |  |                       |     |     +--EHR72140.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Burkholderiales_bacterium_JOSHI_001__dsrC
+|    |  |                       |     |  +--| (46)
+|    |  |                       |     |  |  |  +--YP_008547545.1_sulfite_reductase__Sulfuricella_denitrificans_skB26__dsrC
+|    |  |                       |     |  |  +--| (89)
+|    |  |                       |     |  |     |  +--YP_316238.1_sulfite_reductase__Thiobacillus_denitrificans_ATCC_25259__dsrC
+|    |  |                       |     |  |     +--| (100)
+|    |  |                       |     |  |        +**WP_018507215.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiobacillus_thioparus__dsrC
+|    |  |                       |     +--| (66)
+|    |  |                       |        +--YP_003524301.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sideroxydans_lithotrophicus_ES-1__dsrC
+|    |  |                    +--| (40)
+|    |  |                    |  |     +--YP_002514257.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_sulfidiphilus_HL-EbGr7__dsrC
+|    |  |                    |  |  +--| (60)
+|    |  |                    |  |  |  +--WP_018232023.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_thiocyanodenitrificans__dsrC
+|    |  |                    |  +--| (96)
+|    |  |                    |     +--AHE98855.1_sulfur_transfer_protein_TusE__Thioalkalivibrio_paradoxus_ARh_1__dsrC
+|    |  |                 +--| (30)
+|    |  |                 |  |                          +--YP_003523872.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sideroxydans_lithotrophicus_ES-1__TusE
+|    |  |                 |  |                       +--| (71)
+|    |  |                 |  |                       |  +--YP_008546746.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sulfuricella_denitrificans_skB26__TusE
+|    |  |                 |  |                    +--| (78)
+|    |  |                 |  |                    |  |       +**YP_904067.1_sulfite_reductase__gamma_subunit-related_protein__Candidatus_Ruthia_magnifica_str._Cm__Calyptogena_magnifica___TusE
+|    |  |                 |  |                    |  +-------| (100)
+|    |  |                 |  |                    |          +--YP_001219635.1_intracellular_sulfur_oxidation_protein_DsrC__Candidatus_Vesicomyosocius_okutanii_HA__TusE
+|    |  |                 |  |                 +--| (82)
+|    |  |                 |  |                 |  +--YP_007216490.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_nitratireducens_DSM_14787__TusE
+|    |  |                 |  |              +--| (74)
+|    |  |                 |  |              |  +--EIJ35091.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiothrix_nivea_DSM_5205__TusE
+|    |  |                 |  |        +-----| (100)
+|    |  |                 |  |        |     +--WP_020394365.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiolinea_disciformis__TusE
+|    |  |                 |  +--------| (99)
+|    |  |                 |           |                        +--YP_003442339.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Allochromatium_vinosum_DSM_180__dsrC3
+|    |  |                 |           |                     +--| (40)
+|    |  |                 |           |                     |  +--YP_006413318.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiocystis_violascens_DSM_198__dsrC3
+|    |  |                 |           |                  +--| (38)
+|    |  |                 |           |                  |  +--EIC19415.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiorhodovibrio_sp._970__dsrC3
+|    |  |                 |           |               +--| (43)
+|    |  |                 |           |               |  +--YP_007245142.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioflavicoccus_mobilis_8321__dsrC3
+|    |  |                 |           |            +--| (66)
+|    |  |                 |           |            |  +--EGV18614.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiocapsa_marina_5811__dsrC3
+|    |  |                 |           +------------| (100)
+|    |  |                 |                        +--WP_020507454.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Lamprocystis_purpurea__dsrC3
+|    |  |              +--| (30)
+|    |  |              |  |  +--WP_020397041.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiolinea_disciformis__dsrC
+|    |  |              |  +--| (52)
+|    |  |              |     |     +**YP_904052.1_DsrC_family_protein__Candidatus_Ruthia_magnifica_str._Cm__Calyptogena_magnifica___dsrC
+|    |  |              |     |  +--| (63)
+|    |  |              |     |  |  |  +--YP_001219620.1_intracellular_sulfur_oxidation_protein_DsrC__Candidatus_Vesicomyosocius_okutanii_HA__dsrC
+|    |  |              |     |  |  +--| (38)
+|    |  |              |     |  |     |     +**Mariner_1000289_25
+|    |  |              |     |  |     |  +--| (100)
+|    |  |              |     |  |     |  |  +**TahiMoana_1000070_23
+|    |  |              |     |  |     +--| (67)
+|    |  |              |     |  |        |  +**Ga0098055_1003148_5
+|    |  |              |     |  |        +--| (100)
+|    |  |              |     |  |           +**Ga0098053_1001797_10
+|    |  |              |     +--| (100)
+|    |  |              |        |     +**GBIDBA_10002116_29
+|    |  |              |        |  +**| (100)
+|    |  |              |        |  |  +**GuaymasBasin__k95_681605_flag_0_multi_13.0691_len_13516_8
+|    |  |              |        +--| (100)
+|    |  |              |           |  +**Ga0052187_10045_90
+|    |  |              |           +--| (100)
+|    |  |              |              +**Ga0052187_10048_89
+|    |  |           +--| (58)
+|    |  |           |  |              +**YP_003443227.1_DsrC_protein__Allochromatium_vinosum_DSM_180__dsrC
+|    |  |           |  |           +--| (96)
+|    |  |           |  |           |  +--EGV22415.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Marichromatium_purpuratum_984__dsrC
+|    |  |           |  |        +--| (96)
+|    |  |           |  |        |  +--EGV17851.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiocapsa_marina_5811__dsrC
+|    |  |           |  |     +--| (95)
+|    |  |           |  |     |  +--WP_020504931.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Lamprocystis_purpurea__dsrC
+|    |  |           |  |  +--| (53)
+|    |  |           |  |  |  +--EIC21195.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiorhodovibrio_sp._970__dsrC
+|    |  |           |  +--| (89)
+|    |  |           |     +--YP_007242653.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioflavicoccus_mobilis_8321__dsrC
+|    |  |        +--| (50)
+|    |  |        |  +--YP_742494.1_DsrC_family_protein__Alkalilimnicola_ehrlichii_MLHE-1__dsrC
+|    |  |   +----| (87)
+|    |  |   |    |             +**GCA_900114695.1_IMG-taxon_2619618959_annotated_assembly_FOTV01000040.1_9___5049___5366___1___ID_50_9_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.491
+|    |  |   |    +-------------| (100)
+|    |  |   |                  +**GCA_902498775.1_LR701486.1_1276___1364284___1364601___1___ID_3_1276_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.491
+|    |  +---| (95)
+|    |      |    +--YP_316416.1_DsrC_-like_protein__Thiobacillus_denitrificans_ATCC_25259__TusE
+|    |      +----| (100)
+|    |           +--WP_018507402.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiobacillus_thioparus__TusE
++----| (92)
+     |            +------EIC22896.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiorhodovibrio_sp._970__RspA_GroupIII
+     +------------| (100)
+                  |  +**YP_002514347.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_sulfidiphilus_HL-EbGr7__RspA_GroupIII
+                  +--| (76)
+                     +-----WP_018232109.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_thiocyanodenitrificans__RspA_GroupIII
+
+Tree in newick format:
+
+(YP_003524119.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sideroxydans_lithotrophicus_ES-1__RspA_GroupIII:0.6188894145,(YP_008546905.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sulfuricella_denitrificans_skB26__RspA_GroupIII:0.4132356643,WP_020394313.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiolinea_disciformis__RspA_GroupIII:1.3657738207)63:0.2009565686,((WP_018506768.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiobacillus_thioparus__RspA_GroupIII:0.7268209446,(((((((((((((((YP_003442032.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Allochromatium_vinosum_DSM_180__RspA_GroupIII:0.1908685669,(EGV20144.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiocapsa_marina_5811__RspA_GroupIII:0.1237723728,YP_006413815.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiocystis_violascens_DSM_198__RspA_GroupIII:0.0876432725)63:0.0418259521)52:0.0618952456,WP_020507802.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Lamprocystis_purpurea__RspA_GroupIII:0.1653511353)80:0.0643280251,YP_007245665.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioflavicoccus_mobilis_8321__RspA_GroupIII:0.1488114735)98:0.1971732813,YP_741840.1_DsrC_family_protein__Alkalilimnicola_ehrlichii_MLHE-1__RspA_GroupIII:0.2935906365)100:0.6093425029,(((EHR72148.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Burkholderiales_bacterium_JOSHI_001__RspA_GroupI:0.2195665635,(YP_008547553.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sulfuricella_denitrificans_skB26__RspA_GroupI:0.3251153096,WP_018507223.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiobacillus_thioparus__RspA_GroupI:0.4212560464)90:0.1809640417)55:0.0790042961,YP_003524309.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sideroxydans_lithotrophicus_ES-1__RspA_GroupI:0.2055737364)100:0.5719275513,(((((WP_020504940.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Lamprocystis_purpurea__RspA_GroupI:0.0928429672,(YP_006412724.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiocystis_violascens_DSM_198__RspA_GroupI:0.0955528526,EIC21204.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiorhodovibrio_sp._970__RspA_GroupI:0.1353846345)63:0.0259177036)78:0.0273012893,YP_007243027.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioflavicoccus_mobilis_8321__RspA_GroupI:0.0812499606)84:0.0661698020,EGV22405.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Marichromatium_purpuratum_984__RspA_GroupI:0.1960887164)92:0.1878541682,WP_020393551.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiolinea_disciformis__RspA_GroupI:0.1783523024)80:0.0935028620,((YP_002514248.1_DsrC_family_protein__Thioalkalivibrio_sulfidiphilus_HL-EbGr7__RspA_GroupI:0.0392662140,(WP_018232014.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_thiocyanodenitrificans__RspA_GroupI:0.0366659967,AHE98846.1_DsrC__Thioalkalivibrio_paradoxus_ARh_1__RspA_GroupI:0.1158327366)56:0.0503590513)100:0.3287668977,YP_903842.1_DsrC_family_protein__Candidatus_Ruthia_magnifica_str._Cm__Calyptogena_magnifica___RspA_GroupI:0.5415123177)46:0.0631401088)94:0.1824608276)89:0.3009461449)60:0.0958035760,(CAM77304.1_DsrC-like_protein__Magnetospirillum_gryphiswaldense_MSR-1__TusE:0.2260926497,YP_002512450.1_DsrC_-like_protein__Thioalkalivibrio_sulfidiphilus_HL-EbGr7__TusE:0.5597633685)100:0.4604353831)35:0.0922327633,((((CAM77890.1_DsrC-like_protein__Magnetospirillum_gryphiswaldense_MSR-1__RspA_GroupII:0.4180195346,(YP_003525443.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sideroxydans_lithotrophicus_ES-1__RspA_GroupII:0.2330269939,YP_008545867.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sulfuricella_denitrificans_skB26__RspA_GroupII:0.1941733062)65:0.0748807450)49:0.0426203974,WP_018506850.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiobacillus_thioparus__RspA_GroupII:0.2220247660)87:0.1635556435,(YP_007243819.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioflavicoccus_mobilis_8321__RspA_GroupII:1.0781616199,(YP_002515133.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_sulfidiphilus_HL-EbGr7__RspA_GroupII:0.0950422496,WP_018233019.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_thiocyanodenitrificans__TusE:0.1774529739)100:0.4520113033)61:0.0824453915)92:0.2985058681,(((((WP_020503853.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Lamprocystis_purpurea__RspA_GroupII:0.3556062137,EGV20839.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Marichromatium_purpuratum_984__RspA_GroupII:0.1608854705)32:0.0822224722,EGV20081.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiocapsa_marina_5811__RspA_GroupII:0.1622963045)33:0.0847716949,EIC22973.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiorhodovibrio_sp._970__RspA_GroupII:0.5364718138)30:0.0093130498,YP_006414739.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiocystis_violascens_DSM_198__RspA_GroupII:0.1640119962)100:0.6221763070,WP_018233114.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_thiocyanodenitrificans__RspA_GroupII:1.7640132916)53:0.2176632669)74:0.1394018259)69:0.1657097527,(CAM75803.1_DsrC-like_protein__Magnetospirillum_gryphiswaldense_MSR-1__dsrC:0.1973692871,((EHR72140.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Burkholderiales_bacterium_JOSHI_001__dsrC:0.1274030009,(YP_008547545.1_sulfite_reductase__Sulfuricella_denitrificans_skB26__dsrC:0.0757212471,(YP_316238.1_sulfite_reductase__Thiobacillus_denitrificans_ATCC_25259__dsrC:0.0093634119,WP_018507215.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiobacillus_thioparus__dsrC:0.0000010000)100:0.1625050299)89:0.0705913243)46:0.0304556121,YP_003524301.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sideroxydans_lithotrophicus_ES-1__dsrC:0.1895395835)66:0.0706487727)76:0.0287021731)59:0.0488577949,((YP_002514257.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_sulfidiphilus_HL-EbGr7__dsrC:0.0285386460,WP_018232023.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_thiocyanodenitrificans__dsrC:0.0352440177)60:0.0227100457,AHE98855.1_sulfur_transfer_protein_TusE__Thioalkalivibrio_paradoxus_ARh_1__dsrC:0.0171051952)96:0.1190182400)40:0.0201598221,((((((YP_003523872.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sideroxydans_lithotrophicus_ES-1__TusE:0.2084935850,YP_008546746.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sulfuricella_denitrificans_skB26__TusE:0.1693226829)71:0.0742163313,(YP_904067.1_sulfite_reductase__gamma_subunit-related_protein__Candidatus_Ruthia_magnifica_str._Cm__Calyptogena_magnifica___TusE:0.0031854552,YP_001219635.1_intracellular_sulfur_oxidation_protein_DsrC__Candidatus_Vesicomyosocius_okutanii_HA__TusE:0.0662464058)100:0.5154954272)78:0.1016797332,YP_007216490.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_nitratireducens_DSM_14787__TusE:0.1533144436)82:0.1033219071,EIJ35091.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiothrix_nivea_DSM_5205__TusE:0.1492133562)74:0.0892843257,WP_020394365.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiolinea_disciformis__TusE:0.1135208390)100:0.4091763383,(((((YP_003442339.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Allochromatium_vinosum_DSM_180__dsrC3:0.0839628454,YP_006413318.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiocystis_violascens_DSM_198__dsrC3:0.0329164741)40:0.0282960926,EIC19415.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiorhodovibrio_sp._970__dsrC3:0.1355162244)38:0.0309330053,YP_007245142.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioflavicoccus_mobilis_8321__dsrC3:0.1230140793)43:0.0188860872,EGV18614.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiocapsa_marina_5811__dsrC3:0.0612908508)66:0.1032734468,WP_020507454.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Lamprocystis_purpurea__dsrC3:0.0832196915)100:0.8116427184)99:0.6102256404)30:0.0224384890,(WP_020397041.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiolinea_disciformis__dsrC:0.1580025449,((YP_904052.1_DsrC_family_protein__Candidatus_Ruthia_magnifica_str._Cm__Calyptogena_magnifica___dsrC:0.0013426373,(YP_001219620.1_intracellular_sulfur_oxidation_protein_DsrC__Candidatus_Vesicomyosocius_okutanii_HA__dsrC:0.0345390461,((Mariner_1000289_25:0.0000010000,TahiMoana_1000070_23:0.0000010000)100:0.1661621579,(Ga0098055_1003148_5:0.0000010000,Ga0098053_1001797_10:0.0000010000)100:0.1555387421)67:0.0706250661)38:0.0244665033)63:0.0983623801,((GBIDBA_10002116_29:0.0000010000,GuaymasBasin__k95_681605_flag_0_multi_13.0691_len_13516_8:0.0000028490)100:0.0038547005,(Ga0052187_10045_90:0.0000010000,Ga0052187_10048_89:0.0000010000)100:0.0404693193)100:0.1736433162)100:0.2324530071)52:0.0509756088)30:0.0410889272,(((((YP_003443227.1_DsrC_protein__Allochromatium_vinosum_DSM_180__dsrC:0.0088804832,EGV22415.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Marichromatium_purpuratum_984__dsrC:0.0391762325)96:0.0320623117,EGV17851.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiocapsa_marina_5811__dsrC:0.0637385909)96:0.0467470213,WP_020504931.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Lamprocystis_purpurea__dsrC:0.0397758481)95:0.1187954629,EIC21195.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiorhodovibrio_sp._970__dsrC:0.0109990835)53:0.0168309601,YP_007242653.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioflavicoccus_mobilis_8321__dsrC:0.0437905485)89:0.1416560688)58:0.0886376859,YP_742494.1_DsrC_family_protein__Alkalilimnicola_ehrlichii_MLHE-1__dsrC:0.0695895647)50:0.0913164141,(GCA_900114695.1_IMG-taxon_2619618959_annotated_assembly_FOTV01000040.1_9___5049___5366___1___ID_50_9_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.491:0.0000010000,GCA_902498775.1_LR701486.1_1276___1364284___1364601___1___ID_3_1276_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.491:0.0000010000)100:0.8863106102)87:0.3477711342,(YP_316416.1_DsrC_-like_protein__Thiobacillus_denitrificans_ATCC_25259__TusE:0.0191486874,WP_018507402.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiobacillus_thioparus__TusE:0.0372704839)100:0.3165586910)95:0.2661199499)58:0.1207762873,(EIC22896.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiorhodovibrio_sp._970__RspA_GroupIII:0.4710471707,(YP_002514347.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_sulfidiphilus_HL-EbGr7__RspA_GroupIII:0.0000020970,WP_018232109.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_thiocyanodenitrificans__RspA_GroupIII:0.3684532280)76:0.2156058607)100:0.8332930426)92:0.3456797872);
+
+CONSENSUS TREE
+--------------
+
+Consensus tree is constructed from 1000 bootstrap trees
+Log-likelihood of consensus tree: -9611.673983
+Robinson-Foulds distance between ML tree and consensus tree: 8
+
+Branches with support >0.000000% are kept (extended consensus)
+Branch lengths are optimized by maximum likelihood on original alignment
+Numbers in parentheses are bootstrap supports (%)
+
++---------YP_003524119.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sideroxydans_lithotrophicus_ES-1__RspA_GroupIII
+|
+|  +-----YP_008546905.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sulfuricella_denitrificans_skB26__RspA_GroupIII
++--| (63)
+|  +---------------------WP_020394313.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiolinea_disciformis__RspA_GroupIII
+|
+|       +----------WP_018506768.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiobacillus_thioparus__RspA_GroupIII
+|    +--| (58)
+|    |  |                                                  +--YP_003442032.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Allochromatium_vinosum_DSM_180__RspA_GroupIII
+|    |  |                                               +--| (52)
+|    |  |                                               |  |  +--EGV20144.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiocapsa_marina_5811__RspA_GroupIII
+|    |  |                                               |  +--| (63)
+|    |  |                                               |     +--YP_006413815.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiocystis_violascens_DSM_198__RspA_GroupIII
+|    |  |                                            +--| (80)
+|    |  |                                            |  +--WP_020507802.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Lamprocystis_purpurea__RspA_GroupIII
+|    |  |                                         +--| (98)
+|    |  |                                         |  +--YP_007245665.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioflavicoccus_mobilis_8321__RspA_GroupIII
+|    |  |                                +--------| (100)
+|    |  |                                |        +---YP_741840.1_DsrC_family_protein__Alkalilimnicola_ehrlichii_MLHE-1__RspA_GroupIII
+|    |  |                             +--| (60)
+|    |  |                             |  |               +--EHR72148.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Burkholderiales_bacterium_JOSHI_001__RspA_GroupI
+|    |  |                             |  |            +--| (55)
+|    |  |                             |  |            |  |  +----YP_008547553.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sulfuricella_denitrificans_skB26__RspA_GroupI
+|    |  |                             |  |            |  +--| (90)
+|    |  |                             |  |            |     +-----WP_018507223.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiobacillus_thioparus__RspA_GroupI
+|    |  |                             |  |   +--------| (100)
+|    |  |                             |  |   |        +--YP_003524309.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sideroxydans_lithotrophicus_ES-1__RspA_GroupI
+|    |  |                             |  +---| (89)
+|    |  |                             |      |              +--WP_020504940.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Lamprocystis_purpurea__RspA_GroupI
+|    |  |                             |      |           +--| (78)
+|    |  |                             |      |           |  |  +--YP_006412724.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiocystis_violascens_DSM_198__RspA_GroupI
+|    |  |                             |      |           |  +--| (63)
+|    |  |                             |      |           |     +--EIC21204.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiorhodovibrio_sp._970__RspA_GroupI
+|    |  |                             |      |        +--| (84)
+|    |  |                             |      |        |  +--YP_007243027.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioflavicoccus_mobilis_8321__RspA_GroupI
+|    |  |                             |      |     +--| (92)
+|    |  |                             |      |     |  +--EGV22405.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Marichromatium_purpuratum_984__RspA_GroupI
+|    |  |                             |      |  +--| (80)
+|    |  |                             |      |  |  +--WP_020393551.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiolinea_disciformis__RspA_GroupI
+|    |  |                             |      +--| (94)
+|    |  |                             |         |       +--YP_002514248.1_DsrC_family_protein__Thioalkalivibrio_sulfidiphilus_HL-EbGr7__RspA_GroupI
+|    |  |                             |         |  +----| (100)
+|    |  |                             |         |  |    |  +--WP_018232014.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_thiocyanodenitrificans__RspA_GroupI
+|    |  |                             |         |  |    +--| (56)
+|    |  |                             |         |  |       +--AHE98846.1_DsrC__Thioalkalivibrio_paradoxus_ARh_1__RspA_GroupI
+|    |  |                             |         +--| (46)
+|    |  |                             |            +-------YP_903842.1_DsrC_family_protein__Candidatus_Ruthia_magnifica_str._Cm__Calyptogena_magnifica___RspA_GroupI
+|    |  |                          +--| (35)
+|    |  |                          |  |      +--CAM77304.1_DsrC-like_protein__Magnetospirillum_gryphiswaldense_MSR-1__TusE
+|    |  |                          |  +------| (100)
+|    |  |                          |         +--------YP_002512450.1_DsrC_-like_protein__Thioalkalivibrio_sulfidiphilus_HL-EbGr7__TusE
+|    |  |                       +--| (69)
+|    |  |                       |  |            +-----CAM77890.1_DsrC-like_protein__Magnetospirillum_gryphiswaldense_MSR-1__RspA_GroupII
+|    |  |                       |  |         +--| (49)
+|    |  |                       |  |         |  |  +--YP_003525443.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sideroxydans_lithotrophicus_ES-1__RspA_GroupII
+|    |  |                       |  |         |  +--| (65)
+|    |  |                       |  |         |     +--YP_008545867.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sulfuricella_denitrificans_skB26__RspA_GroupII
+|    |  |                       |  |      +--| (87)
+|    |  |                       |  |      |  +--WP_018506850.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiobacillus_thioparus__RspA_GroupII
+|    |  |                       |  |  +---| (92)
+|    |  |                       |  |  |   |  +----------------YP_007243819.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioflavicoccus_mobilis_8321__RspA_GroupII
+|    |  |                       |  |  |   +--| (61)
+|    |  |                       |  |  |      |      +--YP_002515133.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_sulfidiphilus_HL-EbGr7__RspA_GroupII
+|    |  |                       |  |  |      +------| (100)
+|    |  |                       |  |  |             +--WP_018233019.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_thiocyanodenitrificans__TusE
+|    |  |                       |  +--| (74)
+|    |  |                       |     |                  +---WP_020503853.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Lamprocystis_purpurea__RspA_GroupII
+|    |  |                       |     |               +--| (45)
+|    |  |                       |     |               |  +-------EIC22973.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiorhodovibrio_sp._970__RspA_GroupII
+|    |  |                       |     |            +--| (30)
+|    |  |                       |     |            |  |  +--EGV20839.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Marichromatium_purpuratum_984__RspA_GroupII
+|    |  |                       |     |            |  +--| (15)
+|    |  |                       |     |            |     +--EGV20081.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiocapsa_marina_5811__RspA_GroupII
+|    |  |                       |     |  +---------| (100)
+|    |  |                       |     |  |         +--YP_006414739.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiocystis_violascens_DSM_198__RspA_GroupII
+|    |  |                       |     +--| (53)
+|    |  |                       |        +----------------------------WP_018233114.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_thiocyanodenitrificans__RspA_GroupII
+|    |  |                    +--| (59)
+|    |  |                    |  |  +--CAM75803.1_DsrC-like_protein__Magnetospirillum_gryphiswaldense_MSR-1__dsrC
+|    |  |                    |  +--| (76)
+|    |  |                    |     |     +--EHR72140.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Burkholderiales_bacterium_JOSHI_001__dsrC
+|    |  |                    |     |  +--| (46)
+|    |  |                    |     |  |  |  +--YP_008547545.1_sulfite_reductase__Sulfuricella_denitrificans_skB26__dsrC
+|    |  |                    |     |  |  +--| (89)
+|    |  |                    |     |  |     |  +--YP_316238.1_sulfite_reductase__Thiobacillus_denitrificans_ATCC_25259__dsrC
+|    |  |                    |     |  |     +--| (100)
+|    |  |                    |     |  |        +--WP_018507215.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiobacillus_thioparus__dsrC
+|    |  |                    |     +--| (66)
+|    |  |                    |        +--YP_003524301.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sideroxydans_lithotrophicus_ES-1__dsrC
+|    |  |                 +--| (40)
+|    |  |                 |  |     +--YP_002514257.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_sulfidiphilus_HL-EbGr7__dsrC
+|    |  |                 |  |  +--| (60)
+|    |  |                 |  |  |  +--WP_018232023.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_thiocyanodenitrificans__dsrC
+|    |  |                 |  +--| (96)
+|    |  |                 |     +--AHE98855.1_sulfur_transfer_protein_TusE__Thioalkalivibrio_paradoxus_ARh_1__dsrC
+|    |  |              +--| (30)
+|    |  |              |  |                           +--YP_003523872.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sideroxydans_lithotrophicus_ES-1__TusE
+|    |  |              |  |                        +--| (71)
+|    |  |              |  |                        |  +--YP_008546746.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sulfuricella_denitrificans_skB26__TusE
+|    |  |              |  |                     +--| (78)
+|    |  |              |  |                     |  |       +--YP_904067.1_sulfite_reductase__gamma_subunit-related_protein__Candidatus_Ruthia_magnifica_str._Cm__Calyptogena_magnifica___TusE
+|    |  |              |  |                     |  +-------| (100)
+|    |  |              |  |                     |          +--YP_001219635.1_intracellular_sulfur_oxidation_protein_DsrC__Candidatus_Vesicomyosocius_okutanii_HA__TusE
+|    |  |              |  |                  +--| (82)
+|    |  |              |  |                  |  +--YP_007216490.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_nitratireducens_DSM_14787__TusE
+|    |  |              |  |               +--| (74)
+|    |  |              |  |               |  +--EIJ35091.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiothrix_nivea_DSM_5205__TusE
+|    |  |              |  |         +-----| (100)
+|    |  |              |  |         |     +--WP_020394365.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiolinea_disciformis__TusE
+|    |  |              |  +---------| (99)
+|    |  |              |            |                        +--YP_003442339.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Allochromatium_vinosum_DSM_180__dsrC3
+|    |  |              |            |                     +--| (40)
+|    |  |              |            |                     |  +--YP_006413318.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiocystis_violascens_DSM_198__dsrC3
+|    |  |              |            |                  +--| (38)
+|    |  |              |            |                  |  +--EIC19415.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiorhodovibrio_sp._970__dsrC3
+|    |  |              |            |               +--| (43)
+|    |  |              |            |               |  +--YP_007245142.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioflavicoccus_mobilis_8321__dsrC3
+|    |  |              |            |            +--| (66)
+|    |  |              |            |            |  +--EGV18614.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiocapsa_marina_5811__dsrC3
+|    |  |              |            +------------| (100)
+|    |  |              |                         +--WP_020507454.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Lamprocystis_purpurea__dsrC3
+|    |  |           +--| (58)
+|    |  |           |  |                 +--YP_003443227.1_DsrC_protein__Allochromatium_vinosum_DSM_180__dsrC
+|    |  |           |  |              +--| (96)
+|    |  |           |  |              |  +--EGV22415.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Marichromatium_purpuratum_984__dsrC
+|    |  |           |  |           +--| (96)
+|    |  |           |  |           |  +--EGV17851.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiocapsa_marina_5811__dsrC
+|    |  |           |  |        +--| (95)
+|    |  |           |  |        |  +--WP_020504931.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Lamprocystis_purpurea__dsrC
+|    |  |           |  |     +--| (53)
+|    |  |           |  |     |  +--EIC21195.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiorhodovibrio_sp._970__dsrC
+|    |  |           |  |  +--| (89)
+|    |  |           |  |  |  +--YP_007242653.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioflavicoccus_mobilis_8321__dsrC
+|    |  |           |  +--| (32)
+|    |  |           |     |  +--WP_020397041.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiolinea_disciformis__dsrC
+|    |  |           |     +--| (52)
+|    |  |           |        |        +--YP_904052.1_DsrC_family_protein__Candidatus_Ruthia_magnifica_str._Cm__Calyptogena_magnifica___dsrC
+|    |  |           |        |     +--| (51)
+|    |  |           |        |     |  +--YP_001219620.1_intracellular_sulfur_oxidation_protein_DsrC__Candidatus_Vesicomyosocius_okutanii_HA__dsrC
+|    |  |           |        |  +--| (63)
+|    |  |           |        |  |  |                       +**Mariner_1000289_25
+|    |  |           |        |  |  |                    +**|
+|    |  |           |        |  |  |                    |  +**Ga0052187_10081_117
+|    |  |           |        |  |  |                 +**|
+|    |  |           |        |  |  |                 |  +**Abe_10000200_61
+|    |  |           |        |  |  |              +**|
+|    |  |           |        |  |  |              |  +**Ga0052187_10083_110
+|    |  |           |        |  |  |           +**|
+|    |  |           |        |  |  |           |  +**KiloMoana_10000372_12
+|    |  |           |        |  |  |        +**|
+|    |  |           |        |  |  |        |  +**Ga0052187_10089_129
+|    |  |           |        |  |  |     +--|
+|    |  |           |        |  |  |     |  +**Ga0052187_10086_104
+|    |  |           |        |  |  |  +--| (100)
+|    |  |           |        |  |  |  |  +--TahiMoana_1000070_23
+|    |  |           |        |  |  +--| (67)
+|    |  |           |        |  |     |  +--Ga0098055_1003148_5
+|    |  |           |        |  |     +--| (100)
+|    |  |           |        |  |        +--Ga0098053_1001797_10
+|    |  |           |        +--| (100)
+|    |  |           |           |     +--GBIDBA_10002116_29
+|    |  |           |           |  +--| (100)
+|    |  |           |           |  |  +--GuaymasBasin__k95_681605_flag_0_multi_13.0691_len_13516_8
+|    |  |           |           +--| (100)
+|    |  |           |              |  +--Ga0052187_10045_90
+|    |  |           |              +--| (100)
+|    |  |           |                 +--Ga0052187_10048_89
+|    |  |        +--| (50)
+|    |  |        |  +--YP_742494.1_DsrC_family_protein__Alkalilimnicola_ehrlichii_MLHE-1__dsrC
+|    |  |   +----| (87)
+|    |  |   |    |                                                 +**GCA_900114695.1_IMG-taxon_2619618959_annotated_assembly_FOTV01000040.1_9___5049___5366___1___ID_50_9_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.491
+|    |  |   |    |                                              +**|
+|    |  |   |    |                                              |  +**GCF_003997005.1_ASM399700v1_NZ_RPOA01000001.1_1227___1311008___1311325___1___ID_1_1227_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.494
+|    |  |   |    |                                           +**|
+|    |  |   |    |                                           |  +**GCF_000744695.1_ASM74469v1_NZ_JQMK01000006.1_178___184630___184947___1___ID_6_178_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.497
+|    |  |   |    |                                        +**|
+|    |  |   |    |                                        |  +**GCF_018424725.1_ASM1842472v1_NZ_QTNR01000034.1_9___4824___5141___1___ID_27_9_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.494
+|    |  |   |    |                                     +**|
+|    |  |   |    |                                     |  +**GCF_001924925.1_ASM192492v1_NZ_LQXJ01000019.1_43___39962___40279___1___ID_19_43_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.494
+|    |  |   |    |                                  +**|
+|    |  |   |    |                                  |  +**GCF_902498775.1_NZ_LR701486.1_1276___1364284___1364601___1___ID_3_1276_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.491
+|    |  |   |    |                               +**|
+|    |  |   |    |                               |  +**LauBasin.TahiMoana__k95_155757_flag_0_multi_26.3053_len_244348_fragment_1_160
+|    |  |   |    |                            +**|
+|    |  |   |    |                            |  +**GCA_902506385.1_LR733269.1_3434___3778143___3778460___-1___ID_2_3434_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.491
+|    |  |   |    |                         +**|
+|    |  |   |    |                         |  +**GCF_900114695.1_IMG-taxon_2619618959_annotated_assembly_NZ_FOTV01000040.1_9___5049___5366___1___ID_50_9_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.491
+|    |  |   |    |                      +**|
+|    |  |   |    |                      |  +**LauBasin.Mariner__k95_182687_flag_0_multi_38.4736_len_153290_fragment_1_31
+|    |  |   |    |                   +**|
+|    |  |   |    |                   |  +**GCF_902506385.1_NZ_LR733269.1_3435___3778143___3778460___-1___ID_2_3435_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.491
+|    |  |   |    |                +**|
+|    |  |   |    |                |  +**GCF_002116735.1_ASM211673v1_NZ_CP020931.1_2073___2276348___2276665___-1___ID_1_2073_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.494
+|    |  |   |    |             +--|
+|    |  |   |    |             |  +**Marinobacter_salarius_SZUA-1276|SZUA-1276_02732__SZUA-1276_50_124045..124362___Sulfurtransferase_TusE_
+|    |  |   |    +-------------| (100)
+|    |  |   |                  +--GCA_902498775.1_LR701486.1_1276___1364284___1364601___1___ID_3_1276_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.491
+|    |  +---| (95)
+|    |      |    +--YP_316416.1_DsrC_-like_protein__Thiobacillus_denitrificans_ATCC_25259__TusE
+|    |      +----| (100)
+|    |           +--WP_018507402.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiobacillus_thioparus__TusE
++----| (92)
+     |            +------EIC22896.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiorhodovibrio_sp._970__RspA_GroupIII
+     +------------| (100)
+                  |  +--YP_002514347.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_sulfidiphilus_HL-EbGr7__RspA_GroupIII
+                  +--| (76)
+                     +-----WP_018232109.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_thiocyanodenitrificans__RspA_GroupIII
+
+
+Consensus tree in newick format: 
+
+(YP_003524119.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sideroxydans_lithotrophicus_ES-1__RspA_GroupIII:0.6186919095,(YP_008546905.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sulfuricella_denitrificans_skB26__RspA_GroupIII:0.4177731269,WP_020394313.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiolinea_disciformis__RspA_GroupIII:1.3642088870)63:0.1963420895,((WP_018506768.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiobacillus_thioparus__RspA_GroupIII:0.7277727076,((((((((((((((YP_003442032.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Allochromatium_vinosum_DSM_180__RspA_GroupIII:0.1906444595,(EGV20144.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiocapsa_marina_5811__RspA_GroupIII:0.1237424626,YP_006413815.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiocystis_violascens_DSM_198__RspA_GroupIII:0.0875545457)63:0.0418218531)52:0.0618388746,WP_020507802.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Lamprocystis_purpurea__RspA_GroupIII:0.1652076420)80:0.0642666420,YP_007245665.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioflavicoccus_mobilis_8321__RspA_GroupIII:0.1487215681)98:0.1975278100,YP_741840.1_DsrC_family_protein__Alkalilimnicola_ehrlichii_MLHE-1__RspA_GroupIII:0.2943537357)100:0.6052590824,(((EHR72148.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Burkholderiales_bacterium_JOSHI_001__RspA_GroupI:0.2196357181,(YP_008547553.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sulfuricella_denitrificans_skB26__RspA_GroupI:0.3243221869,WP_018507223.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiobacillus_thioparus__RspA_GroupI:0.4207935408)90:0.1809386452)55:0.0796551903,YP_003524309.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sideroxydans_lithotrophicus_ES-1__RspA_GroupI:0.2049149963)100:0.5705330706,(((((WP_020504940.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Lamprocystis_purpurea__RspA_GroupI:0.0926348279,(YP_006412724.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiocystis_violascens_DSM_198__RspA_GroupI:0.0953220531,EIC21204.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiorhodovibrio_sp._970__RspA_GroupI:0.1352195393)63:0.0260525981)78:0.0271633533,YP_007243027.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioflavicoccus_mobilis_8321__RspA_GroupI:0.0812849581)84:0.0664402720,EGV22405.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Marichromatium_purpuratum_984__RspA_GroupI:0.1955716332)92:0.1879680076,WP_020393551.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiolinea_disciformis__RspA_GroupI:0.1773742004)80:0.0935100872,((YP_002514248.1_DsrC_family_protein__Thioalkalivibrio_sulfidiphilus_HL-EbGr7__RspA_GroupI:0.0394500456,(WP_018232014.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_thiocyanodenitrificans__RspA_GroupI:0.0365637833,AHE98846.1_DsrC__Thioalkalivibrio_paradoxus_ARh_1__RspA_GroupI:0.1157655842)56:0.0501377578)100:0.3275986857,YP_903842.1_DsrC_family_protein__Candidatus_Ruthia_magnifica_str._Cm__Calyptogena_magnifica___RspA_GroupI:0.5406521012)46:0.0633343196)94:0.1825907472)89:0.3050990602)60:0.0950510778,(CAM77304.1_DsrC-like_protein__Magnetospirillum_gryphiswaldense_MSR-1__TusE:0.2320018087,YP_002512450.1_DsrC_-like_protein__Thioalkalivibrio_sulfidiphilus_HL-EbGr7__TusE:0.5527592437)100:0.4582406918)35:0.0933388564,((((CAM77890.1_DsrC-like_protein__Magnetospirillum_gryphiswaldense_MSR-1__RspA_GroupII:0.4195419469,(YP_003525443.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sideroxydans_lithotrophicus_ES-1__RspA_GroupII:0.2337228365,YP_008545867.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sulfuricella_denitrificans_skB26__RspA_GroupII:0.1934171153)65:0.0742556146)49:0.0363353338,WP_018506850.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiobacillus_thioparus__RspA_GroupII:0.2285243966)87:0.1637895586,(YP_007243819.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioflavicoccus_mobilis_8321__RspA_GroupII:1.0740259513,(YP_002515133.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_sulfidiphilus_HL-EbGr7__RspA_GroupII:0.0940216037,WP_018233019.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_thiocyanodenitrificans__TusE:0.1779903982)100:0.4546530968)61:0.0825448781)92:0.2916313941,((((WP_020503853.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Lamprocystis_purpurea__RspA_GroupII:0.2981927415,EIC22973.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiorhodovibrio_sp._970__RspA_GroupII:0.5062263963)45:0.1041996523,(EGV20839.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Marichromatium_purpuratum_984__RspA_GroupII:0.2163616981,EGV20081.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiocapsa_marina_5811__RspA_GroupII:0.1745425831)15:0.0477135796)30:0.0128521699,YP_006414739.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiocystis_violascens_DSM_198__RspA_GroupII:0.1949319746)100:0.6674564653,WP_018233114.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_thiocyanodenitrificans__RspA_GroupII:1.7842711083)53:0.1943590643)74:0.1478617726)69:0.1654242565,(CAM75803.1_DsrC-like_protein__Magnetospirillum_gryphiswaldense_MSR-1__dsrC:0.1927012300,((EHR72140.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Burkholderiales_bacterium_JOSHI_001__dsrC:0.1264917902,(YP_008547545.1_sulfite_reductase__Sulfuricella_denitrificans_skB26__dsrC:0.0763037166,(YP_316238.1_sulfite_reductase__Thiobacillus_denitrificans_ATCC_25259__dsrC:0.0093545457,WP_018507215.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiobacillus_thioparus__dsrC:0.0000021185)100:0.1620430088)89:0.0718018284)46:0.0295405984,YP_003524301.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sideroxydans_lithotrophicus_ES-1__dsrC:0.1903117496)66:0.0763036933)76:0.0293343403)59:0.0494330778,((YP_002514257.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_sulfidiphilus_HL-EbGr7__dsrC:0.0286727525,WP_018232023.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_thiocyanodenitrificans__dsrC:0.0351912035)60:0.0218747389,AHE98855.1_sulfur_transfer_protein_TusE__Thioalkalivibrio_paradoxus_ARh_1__dsrC:0.0179484951)96:0.1168289962)40:0.0115650621,((((((YP_003523872.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sideroxydans_lithotrophicus_ES-1__TusE:0.2079806914,YP_008546746.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sulfuricella_denitrificans_skB26__TusE:0.1699147278)71:0.0745552897,(YP_904067.1_sulfite_reductase__gamma_subunit-related_protein__Candidatus_Ruthia_magnifica_str._Cm__Calyptogena_magnifica___TusE:0.0031405182,YP_001219635.1_intracellular_sulfur_oxidation_protein_DsrC__Candidatus_Vesicomyosocius_okutanii_HA__TusE:0.0663341686)100:0.5146296862)78:0.1015775546,YP_007216490.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_nitratireducens_DSM_14787__TusE:0.1538915008)82:0.1030576524,EIJ35091.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiothrix_nivea_DSM_5205__TusE:0.1490821272)74:0.0887955137,WP_020394365.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiolinea_disciformis__TusE:0.1139468580)100:0.4059664753,(((((YP_003442339.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Allochromatium_vinosum_DSM_180__dsrC3:0.0841252393,YP_006413318.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiocystis_violascens_DSM_198__dsrC3:0.0327735593)40:0.0283751943,EIC19415.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiorhodovibrio_sp._970__dsrC3:0.1355819327)38:0.0310452286,YP_007245142.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioflavicoccus_mobilis_8321__dsrC3:0.1229481148)43:0.0189181204,EGV18614.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiocapsa_marina_5811__dsrC3:0.0614709712)66:0.1057441183,WP_020507454.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Lamprocystis_purpurea__dsrC3:0.0807554602)100:0.8201861406)99:0.6274571501)30:0.0451185375,((((((YP_003443227.1_DsrC_protein__Allochromatium_vinosum_DSM_180__dsrC:0.0088851888,EGV22415.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Marichromatium_purpuratum_984__dsrC:0.0391563726)96:0.0320723601,EGV17851.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiocapsa_marina_5811__dsrC:0.0637001185)96:0.0467946031,WP_020504931.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Lamprocystis_purpurea__dsrC:0.0396979050)95:0.1186488323,EIC21195.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiorhodovibrio_sp._970__dsrC:0.0111860124)53:0.0166427661,YP_007242653.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioflavicoccus_mobilis_8321__dsrC:0.0441241536)89:0.1482929975,(WP_020397041.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiolinea_disciformis__dsrC:0.1709870831,(((YP_904052.1_DsrC_family_protein__Candidatus_Ruthia_magnifica_str._Cm__Calyptogena_magnifica___dsrC:0.0128296046,YP_001219620.1_intracellular_sulfur_oxidation_protein_DsrC__Candidatus_Vesicomyosocius_okutanii_HA__dsrC:0.0476917966)51:0.0371740572,((((((((Mariner_1000289_25:0.0000000000,Ga0052187_10081_117:0.0000000000):0.0000000000,Abe_10000200_61:0.0000000000):0.0000000000,Ga0052187_10083_110:0.0000000000):0.0000000000,KiloMoana_10000372_12:0.0000000000):0.0000000000,Ga0052187_10089_129:0.0000000000):0.0000000000,Ga0052187_10086_104:0.0000000000):0.0000021185,TahiMoana_1000070_23:0.0000021185)100:0.1634749626,(Ga0098055_1003148_5:0.0000021185,Ga0098053_1001797_10:0.0000021185)100:0.1541487116)67:0.0559957303)63:0.0625240852,((GBIDBA_10002116_29:0.0000021185,GuaymasBasin__k95_681605_flag_0_multi_13.0691_len_13516_8:0.0000021185)100:0.0040121550,(Ga0052187_10045_90:0.0000021185,Ga0052187_10048_89:0.0000021185)100:0.0402154279)100:0.1941990519)100:0.2215356862)52:0.0413119826)32:0.0231684446)58:0.1041044861,YP_742494.1_DsrC_family_protein__Alkalilimnicola_ehrlichii_MLHE-1__dsrC:0.0688161131)50:0.0864462692,(((((((((((((GCA_900114695.1_IMG-taxon_2619618959_annotated_assembly_FOTV01000040.1_9___5049___5366___1___ID_50_9_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.491:0.0000000000,GCF_003997005.1_ASM399700v1_NZ_RPOA01000001.1_1227___1311008___1311325___1___ID_1_1227_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.494:0.0000000000):0.0000000000,GCF_000744695.1_ASM74469v1_NZ_JQMK01000006.1_178___184630___184947___1___ID_6_178_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.497:0.0000000000):0.0000000000,GCF_018424725.1_ASM1842472v1_NZ_QTNR01000034.1_9___4824___5141___1___ID_27_9_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.494:0.0000000000):0.0000000000,GCF_001924925.1_ASM192492v1_NZ_LQXJ01000019.1_43___39962___40279___1___ID_19_43_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.494:0.0000000000):0.0000000000,GCF_902498775.1_NZ_LR701486.1_1276___1364284___1364601___1___ID_3_1276_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.491:0.0000000000):0.0000000000,LauBasin.TahiMoana__k95_155757_flag_0_multi_26.3053_len_244348_fragment_1_160:0.0000000000):0.0000000000,GCA_902506385.1_LR733269.1_3434___3778143___3778460___-1___ID_2_3434_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.491:0.0000000000):0.0000000000,GCF_900114695.1_IMG-taxon_2619618959_annotated_assembly_NZ_FOTV01000040.1_9___5049___5366___1___ID_50_9_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.491:0.0000000000):0.0000000000,LauBasin.Mariner__k95_182687_flag_0_multi_38.4736_len_153290_fragment_1_31:0.0000000000):0.0000000000,GCF_902506385.1_NZ_LR733269.1_3435___3778143___3778460___-1___ID_2_3435_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.491:0.0000000000):0.0000000000,GCF_002116735.1_ASM211673v1_NZ_CP020931.1_2073___2276348___2276665___-1___ID_1_2073_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.494:0.0000000000):0.0000000000,Marinobacter_salarius_SZUA-1276|SZUA-1276_02732__SZUA-1276_50_124045..124362___Sulfurtransferase_TusE_:0.0000000000):0.0000021185,GCA_902498775.1_LR701486.1_1276___1364284___1364601___1___ID_3_1276_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.491:0.0000021185)100:0.8895045577)87:0.3504063187,(YP_316416.1_DsrC_-like_protein__Thiobacillus_denitrificans_ATCC_25259__TusE:0.0188726517,WP_018507402.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiobacillus_thioparus__TusE:0.0375070563)100:0.3149764300)95:0.2675813263)58:0.1235787794,(EIC22896.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiorhodovibrio_sp._970__RspA_GroupIII:0.4694222832,(YP_002514347.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_sulfidiphilus_HL-EbGr7__RspA_GroupIII:0.0000023849,WP_018232109.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_thiocyanodenitrificans__RspA_GroupIII:0.3680871156)76:0.2161584883)100:0.8348696096)92:0.3411956624);
+
+TIME STAMP
+----------
+
+Date and time: Wed Apr 20 14:15:29 2022
+Total CPU time used: 427.925828 seconds (0h:7m:7s)
+Total wall-clock time used: 217.7447134 seconds (0h:3m:37s)
+
