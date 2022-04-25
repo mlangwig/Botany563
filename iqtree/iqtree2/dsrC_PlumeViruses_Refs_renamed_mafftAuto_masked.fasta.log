@@ -1,0 +1,445 @@
+IQ-TREE multicore version 2.0.3 for Linux 64-bit built Dec 20 2020
+Developed by Bui Quang Minh, Nguyen Lam Tung, Olga Chernomor,
+Heiko Schmidt, Dominik Schrempf, Michael Woodhams.
+
+Host:    sulfur.doit.wisc.edu (AVX512, FMA3, 1007 GB RAM)
+Command: iqtree -s dsrC_PlumeViruses_Refs_renamed_mafftAuto_masked.fasta -T AUTO -ntmax 15 -bnni -bb 1000
+Seed:    963439 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Wed Apr 20 14:10:50 2022
+Kernel:  AVX+FMA - auto-detect threads (80 CPU cores detected)
+
+Reading alignment file dsrC_PlumeViruses_Refs_renamed_mafftAuto_masked.fasta ... Fasta format detected
+Alignment most likely contains protein sequences
+Alignment has 104 sequences with 110 columns, 110 distinct patterns
+109 parsimony-informative, 1 singleton sites, 0 constant sites
+WARNING: Some sequence names are changed as follows:
+YP_003524119.1_sulfur_relay_protein,_TusE/DsrC/DsvC_family_[Sideroxydans_lithotrophicus_ES-1]_RspA_GroupIII -> YP_003524119.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sideroxydans_lithotrophicus_ES-1__RspA_GroupIII
+YP_008546905.1_sulfur_relay_protein,_TusE/DsrC/DsvC_family_[Sulfuricella_denitrificans_skB26]_RspA_GroupIII -> YP_008546905.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sulfuricella_denitrificans_skB26__RspA_GroupIII
+WP_018506768.1_TusE/DsrC/DsvC_family_sulfur_relay_protein_[Thiobacillus_thioparus]_RspA_GroupIII -> WP_018506768.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiobacillus_thioparus__RspA_GroupIII
+YP_003442032.1_TusE/DsrC/DsvC_family_sulfur_relay_protein_[Allochromatium_vinosum_DSM_180]_RspA_GroupIII -> YP_003442032.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Allochromatium_vinosum_DSM_180__RspA_GroupIII
+WP_020507802.1_TusE/DsrC/DsvC_family_sulfur_relay_protein_[Lamprocystis_purpurea]_RspA_GroupIII -> WP_020507802.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Lamprocystis_purpurea__RspA_GroupIII
+EGV20144.1_sulfur_relay_protein,_TusE/DsrC/DsvC_family_[Thiocapsa_marina_5811]_RspA_GroupIII -> EGV20144.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiocapsa_marina_5811__RspA_GroupIII
+YP_006413815.1_TusE/DsrC/DsvC_family_sulfur_relay_protein_[Thiocystis_violascens_DSM_198]_RspA_GroupIII -> YP_006413815.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiocystis_violascens_DSM_198__RspA_GroupIII
+YP_007245665.1_TusE/DsrC/DsvC_family_sulfur_relay_protein_[Thioflavicoccus_mobilis_8321]_RspA_GroupIII -> YP_007245665.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioflavicoccus_mobilis_8321__RspA_GroupIII
+EIC22896.1_sulfur_relay_protein,_TusE/DsrC/DsvC_family_[Thiorhodovibrio_sp._970]_RspA_GroupIII -> EIC22896.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiorhodovibrio_sp._970__RspA_GroupIII
+YP_741840.1_DsrC_family_protein_[Alkalilimnicola_ehrlichii_MLHE-1]_RspA_GroupIII -> YP_741840.1_DsrC_family_protein__Alkalilimnicola_ehrlichii_MLHE-1__RspA_GroupIII
+YP_002514347.1_TusE/DsrC/DsvC_family_sulfur_relay_protein_[Thioalkalivibrio_sulfidiphilus_HL-EbGr7]_RspA_GroupIII -> YP_002514347.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_sulfidiphilus_HL-EbGr7__RspA_GroupIII
+WP_018232109.1_TusE/DsrC/DsvC_family_sulfur_relay_protein_[Thioalkalivibrio_thiocyanodenitrificans]_RspA_GroupIII -> WP_018232109.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_thiocyanodenitrificans__RspA_GroupIII
+WP_020394313.1_TusE/DsrC/DsvC_family_sulfur_relay_protein_[Thiolinea_disciformis]_RspA_GroupIII -> WP_020394313.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiolinea_disciformis__RspA_GroupIII
+CAM77890.1_DsrC-like_protein_[Magnetospirillum_gryphiswaldense_MSR-1]_RspA_GroupII -> CAM77890.1_DsrC-like_protein__Magnetospirillum_gryphiswaldense_MSR-1__RspA_GroupII
+YP_003525443.1_sulfur_relay_protein,_TusE/DsrC/DsvC_family_[Sideroxydans_lithotrophicus_ES-1]_RspA_GroupII -> YP_003525443.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sideroxydans_lithotrophicus_ES-1__RspA_GroupII
+YP_008545867.1_sulfur_relay_protein,_TusE/DsrC/DsvC_family_[Sulfuricella_denitrificans_skB26]_RspA_GroupII -> YP_008545867.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sulfuricella_denitrificans_skB26__RspA_GroupII
+WP_018506850.1_TusE/DsrC/DsvC_family_sulfur_relay_protein_[Thiobacillus_thioparus]_RspA_GroupII -> WP_018506850.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiobacillus_thioparus__RspA_GroupII
+WP_020503853.1_TusE/DsrC/DsvC_family_sulfur_relay_protein_[Lamprocystis_purpurea]_RspA_GroupII -> WP_020503853.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Lamprocystis_purpurea__RspA_GroupII
+EGV20839.1_sulfur_relay_protein,_TusE/DsrC/DsvC_family_[Marichromatium_purpuratum_984]_RspA_GroupII -> EGV20839.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Marichromatium_purpuratum_984__RspA_GroupII
+EGV20081.1_sulfur_relay_protein,_TusE/DsrC/DsvC_family_[Thiocapsa_marina_5811]_RspA_GroupII -> EGV20081.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiocapsa_marina_5811__RspA_GroupII
+YP_006414739.1_TusE/DsrC/DsvC_family_sulfur_relay_protein_[Thiocystis_violascens_DSM_198]_RspA_GroupII -> YP_006414739.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiocystis_violascens_DSM_198__RspA_GroupII
+YP_007243819.1_TusE/DsrC/DsvC_family_sulfur_relay_protein_[Thioflavicoccus_mobilis_8321]_RspA_GroupII -> YP_007243819.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioflavicoccus_mobilis_8321__RspA_GroupII
+EIC22973.1_sulfur_relay_protein,_TusE/DsrC/DsvC_family_[Thiorhodovibrio_sp._970]_RspA_GroupII -> EIC22973.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiorhodovibrio_sp._970__RspA_GroupII
+YP_002515133.1_TusE/DsrC/DsvC_family_sulfur_relay_protein_[Thioalkalivibrio_sulfidiphilus_HL-EbGr7]_RspA_GroupII -> YP_002515133.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_sulfidiphilus_HL-EbGr7__RspA_GroupII
+WP_018233114.1_TusE/DsrC/DsvC_family_sulfur_relay_protein_[Thioalkalivibrio_thiocyanodenitrificans]_RspA_GroupII -> WP_018233114.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_thiocyanodenitrificans__RspA_GroupII
+EHR72148.1_sulfur_relay_protein,_TusE/DsrC/DsvC_family_[Burkholderiales_bacterium_JOSHI_001]_RspA_GroupI -> EHR72148.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Burkholderiales_bacterium_JOSHI_001__RspA_GroupI
+YP_003524309.1_sulfur_relay_protein,_TusE/DsrC/DsvC_family_[Sideroxydans_lithotrophicus_ES-1]_RspA_GroupI -> YP_003524309.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sideroxydans_lithotrophicus_ES-1__RspA_GroupI
+YP_008547553.1_sulfur_relay_protein,_TusE/DsrC/DsvC_family_[Sulfuricella_denitrificans_skB26]_RspA_GroupI -> YP_008547553.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sulfuricella_denitrificans_skB26__RspA_GroupI
+WP_018507223.1_TusE/DsrC/DsvC_family_sulfur_relay_protein_[Thiobacillus_thioparus]_RspA_GroupI -> WP_018507223.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiobacillus_thioparus__RspA_GroupI
+WP_020504940.1_TusE/DsrC/DsvC_family_sulfur_relay_protein_[Lamprocystis_purpurea]_RspA_GroupI -> WP_020504940.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Lamprocystis_purpurea__RspA_GroupI
+EGV22405.1_sulfur_relay_protein,_TusE/DsrC/DsvC_family_[Marichromatium_purpuratum_984]_RspA_GroupI -> EGV22405.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Marichromatium_purpuratum_984__RspA_GroupI
+YP_006412724.1_TusE/DsrC/DsvC_family_sulfur_relay_protein_[Thiocystis_violascens_DSM_198]_RspA_GroupI -> YP_006412724.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiocystis_violascens_DSM_198__RspA_GroupI
+YP_007243027.1_TusE/DsrC/DsvC_family_sulfur_relay_protein_[Thioflavicoccus_mobilis_8321]_RspA_GroupI -> YP_007243027.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioflavicoccus_mobilis_8321__RspA_GroupI
+EIC21204.1_sulfur_relay_protein,_TusE/DsrC/DsvC_family_[Thiorhodovibrio_sp._970]_RspA_GroupI -> EIC21204.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiorhodovibrio_sp._970__RspA_GroupI
+YP_002514248.1_DsrC_family_protein_[Thioalkalivibrio_sulfidiphilus_HL-EbGr7]_RspA_GroupI -> YP_002514248.1_DsrC_family_protein__Thioalkalivibrio_sulfidiphilus_HL-EbGr7__RspA_GroupI
+WP_018232014.1_TusE/DsrC/DsvC_family_sulfur_relay_protein_[Thioalkalivibrio_thiocyanodenitrificans]_RspA_GroupI -> WP_018232014.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_thiocyanodenitrificans__RspA_GroupI
+AHE98846.1_DsrC_[Thioalkalivibrio_paradoxus_ARh_1]_RspA_GroupI -> AHE98846.1_DsrC__Thioalkalivibrio_paradoxus_ARh_1__RspA_GroupI
+WP_020393551.1_TusE/DsrC/DsvC_family_sulfur_relay_protein_[Thiolinea_disciformis]_RspA_GroupI -> WP_020393551.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiolinea_disciformis__RspA_GroupI
+YP_903842.1_DsrC_family_protein_[Candidatus_Ruthia_magnifica_str._Cm_(Calyptogena_magnifica)]_RspA_GroupI -> YP_903842.1_DsrC_family_protein__Candidatus_Ruthia_magnifica_str._Cm__Calyptogena_magnifica___RspA_GroupI
+CAM77304.1_DsrC-like_protein_[Magnetospirillum_gryphiswaldense_MSR-1]_TusE -> CAM77304.1_DsrC-like_protein__Magnetospirillum_gryphiswaldense_MSR-1__TusE
+YP_003523872.1_sulfur_relay_protein,_TusE/DsrC/DsvC_family_[Sideroxydans_lithotrophicus_ES-1]_TusE -> YP_003523872.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sideroxydans_lithotrophicus_ES-1__TusE
+YP_008546746.1_sulfur_relay_protein,_TusE/DsrC/DsvC_family_[Sulfuricella_denitrificans_skB26]_TusE -> YP_008546746.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sulfuricella_denitrificans_skB26__TusE
+YP_316416.1_DsrC_-like_protein_[Thiobacillus_denitrificans_ATCC_25259]_TusE -> YP_316416.1_DsrC_-like_protein__Thiobacillus_denitrificans_ATCC_25259__TusE
+WP_018507402.1_TusE/DsrC/DsvC_family_sulfur_relay_protein_[Thiobacillus_thioparus]_TusE -> WP_018507402.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiobacillus_thioparus__TusE
+YP_007216490.1_TusE/DsrC/DsvC_family_sulfur_relay_protein_[Thioalkalivibrio_nitratireducens_DSM_14787]_TusE -> YP_007216490.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_nitratireducens_DSM_14787__TusE
+YP_002512450.1_DsrC_-like_protein_[Thioalkalivibrio_sulfidiphilus_HL-EbGr7]_TusE -> YP_002512450.1_DsrC_-like_protein__Thioalkalivibrio_sulfidiphilus_HL-EbGr7__TusE
+WP_018233019.1_TusE/DsrC/DsvC_family_sulfur_relay_protein_[Thioalkalivibrio_thiocyanodenitrificans]_TusE -> WP_018233019.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_thiocyanodenitrificans__TusE
+WP_020394365.1_TusE/DsrC/DsvC_family_sulfur_relay_protein_[Thiolinea_disciformis]_TusE -> WP_020394365.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiolinea_disciformis__TusE
+EIJ35091.1_sulfur_relay_protein,_TusE/DsrC/DsvC_family_[Thiothrix_nivea_DSM_5205]_TusE -> EIJ35091.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiothrix_nivea_DSM_5205__TusE
+YP_904067.1_sulfite_reductase,_gamma_subunit-related_protein_[Candidatus_Ruthia_magnifica_str._Cm_(Calyptogena_magnifica)]_TusE -> YP_904067.1_sulfite_reductase__gamma_subunit-related_protein__Candidatus_Ruthia_magnifica_str._Cm__Calyptogena_magnifica___TusE
+YP_001219635.1_intracellular_sulfur_oxidation_protein_DsrC_[Candidatus_Vesicomyosocius_okutanii_HA]_TusE -> YP_001219635.1_intracellular_sulfur_oxidation_protein_DsrC__Candidatus_Vesicomyosocius_okutanii_HA__TusE
+YP_003442339.1_TusE/DsrC/DsvC_family_sulfur_relay_protein_[Allochromatium_vinosum_DSM_180]_dsrC3 -> YP_003442339.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Allochromatium_vinosum_DSM_180__dsrC3
+WP_020507454.1_TusE/DsrC/DsvC_family_sulfur_relay_protein_[Lamprocystis_purpurea]_dsrC3 -> WP_020507454.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Lamprocystis_purpurea__dsrC3
+EGV18614.1_sulfur_relay_protein,_TusE/DsrC/DsvC_family_[Thiocapsa_marina_5811]_dsrC3 -> EGV18614.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiocapsa_marina_5811__dsrC3
+YP_006413318.1_TusE/DsrC/DsvC_family_sulfur_relay_protein_[Thiocystis_violascens_DSM_198]_dsrC3 -> YP_006413318.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiocystis_violascens_DSM_198__dsrC3
+YP_007245142.1_TusE/DsrC/DsvC_family_sulfur_relay_protein_[Thioflavicoccus_mobilis_8321]_dsrC3 -> YP_007245142.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioflavicoccus_mobilis_8321__dsrC3
+EIC19415.1_sulfur_relay_protein,_TusE/DsrC/DsvC_family_[Thiorhodovibrio_sp._970]_dsrC3 -> EIC19415.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiorhodovibrio_sp._970__dsrC3
+CAM75803.1_DsrC-like_protein_[Magnetospirillum_gryphiswaldense_MSR-1]_dsrC -> CAM75803.1_DsrC-like_protein__Magnetospirillum_gryphiswaldense_MSR-1__dsrC
+EHR72140.1_sulfur_relay_protein,_TusE/DsrC/DsvC_family_[Burkholderiales_bacterium_JOSHI_001]_dsrC -> EHR72140.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Burkholderiales_bacterium_JOSHI_001__dsrC
+YP_003524301.1_sulfur_relay_protein,_TusE/DsrC/DsvC_family_[Sideroxydans_lithotrophicus_ES-1]_dsrC -> YP_003524301.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sideroxydans_lithotrophicus_ES-1__dsrC
+YP_008547545.1_sulfite_reductase_[Sulfuricella_denitrificans_skB26]_dsrC -> YP_008547545.1_sulfite_reductase__Sulfuricella_denitrificans_skB26__dsrC
+YP_316238.1_sulfite_reductase_[Thiobacillus_denitrificans_ATCC_25259]_dsrC -> YP_316238.1_sulfite_reductase__Thiobacillus_denitrificans_ATCC_25259__dsrC
+WP_018507215.1_TusE/DsrC/DsvC_family_sulfur_relay_protein_[Thiobacillus_thioparus]_dsrC -> WP_018507215.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiobacillus_thioparus__dsrC
+YP_003443227.1_DsrC_protein_[Allochromatium_vinosum_DSM_180]_dsrC -> YP_003443227.1_DsrC_protein__Allochromatium_vinosum_DSM_180__dsrC
+WP_020504931.1_TusE/DsrC/DsvC_family_sulfur_relay_protein_[Lamprocystis_purpurea]_dsrC -> WP_020504931.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Lamprocystis_purpurea__dsrC
+EGV22415.1_sulfur_relay_protein,_TusE/DsrC/DsvC_family_[Marichromatium_purpuratum_984]_dsrC -> EGV22415.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Marichromatium_purpuratum_984__dsrC
+EGV17851.1_sulfur_relay_protein,_TusE/DsrC/DsvC_family_[Thiocapsa_marina_5811]_dsrC -> EGV17851.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiocapsa_marina_5811__dsrC
+YP_007242653.1_TusE/DsrC/DsvC_family_sulfur_relay_protein_[Thioflavicoccus_mobilis_8321]_dsrC -> YP_007242653.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioflavicoccus_mobilis_8321__dsrC
+EIC21195.1_sulfur_relay_protein,_TusE/DsrC/DsvC_family_[Thiorhodovibrio_sp._970]_dsrC -> EIC21195.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiorhodovibrio_sp._970__dsrC
+YP_742494.1_DsrC_family_protein_[Alkalilimnicola_ehrlichii_MLHE-1]_dsrC -> YP_742494.1_DsrC_family_protein__Alkalilimnicola_ehrlichii_MLHE-1__dsrC
+YP_002514257.1_TusE/DsrC/DsvC_family_sulfur_relay_protein_[Thioalkalivibrio_sulfidiphilus_HL-EbGr7]_dsrC -> YP_002514257.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_sulfidiphilus_HL-EbGr7__dsrC
+WP_018232023.1_TusE/DsrC/DsvC_family_sulfur_relay_protein_[Thioalkalivibrio_thiocyanodenitrificans]_dsrC -> WP_018232023.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_thiocyanodenitrificans__dsrC
+AHE98855.1_sulfur_transfer_protein_TusE_[Thioalkalivibrio_paradoxus_ARh_1]_dsrC -> AHE98855.1_sulfur_transfer_protein_TusE__Thioalkalivibrio_paradoxus_ARh_1__dsrC
+WP_020397041.1_TusE/DsrC/DsvC_family_sulfur_relay_protein_[Thiolinea_disciformis]_dsrC -> WP_020397041.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiolinea_disciformis__dsrC
+YP_904052.1_DsrC_family_protein_[Candidatus_Ruthia_magnifica_str._Cm_(Calyptogena_magnifica)]_dsrC -> YP_904052.1_DsrC_family_protein__Candidatus_Ruthia_magnifica_str._Cm__Calyptogena_magnifica___dsrC
+YP_001219620.1_intracellular_sulfur_oxidation_protein_DsrC_[Candidatus_Vesicomyosocius_okutanii_HA]_dsrC -> YP_001219620.1_intracellular_sulfur_oxidation_protein_DsrC__Candidatus_Vesicomyosocius_okutanii_HA__dsrC
+GCA_900114695.1_IMG-taxon_2619618959_annotated_assembly_FOTV01000040.1_9_#_5049_#_5366_#_1_#_ID=50_9;partial=00;start_type=ATG;rbs_motif=3Base/5BMM;rbs_spacer=13-15bp;gc_cont=0.491 -> GCA_900114695.1_IMG-taxon_2619618959_annotated_assembly_FOTV01000040.1_9___5049___5366___1___ID_50_9_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.491
+GCA_902498775.1_LR701486.1_1276_#_1364284_#_1364601_#_1_#_ID=3_1276;partial=00;start_type=ATG;rbs_motif=3Base/5BMM;rbs_spacer=13-15bp;gc_cont=0.491 -> GCA_902498775.1_LR701486.1_1276___1364284___1364601___1___ID_3_1276_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.491
+GCA_902506385.1_LR733269.1_3434_#_3778143_#_3778460_#_-1_#_ID=2_3434;partial=00;start_type=ATG;rbs_motif=3Base/5BMM;rbs_spacer=13-15bp;gc_cont=0.491 -> GCA_902506385.1_LR733269.1_3434___3778143___3778460___-1___ID_2_3434_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.491
+GCF_000744695.1_ASM74469v1_NZ_JQMK01000006.1_178_#_184630_#_184947_#_1_#_ID=6_178;partial=00;start_type=ATG;rbs_motif=3Base/5BMM;rbs_spacer=13-15bp;gc_cont=0.497 -> GCF_000744695.1_ASM74469v1_NZ_JQMK01000006.1_178___184630___184947___1___ID_6_178_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.497
+GCF_001924925.1_ASM192492v1_NZ_LQXJ01000019.1_43_#_39962_#_40279_#_1_#_ID=19_43;partial=00;start_type=ATG;rbs_motif=3Base/5BMM;rbs_spacer=13-15bp;gc_cont=0.494 -> GCF_001924925.1_ASM192492v1_NZ_LQXJ01000019.1_43___39962___40279___1___ID_19_43_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.494
+GCF_002116735.1_ASM211673v1_NZ_CP020931.1_2073_#_2276348_#_2276665_#_-1_#_ID=1_2073;partial=00;start_type=ATG;rbs_motif=3Base/5BMM;rbs_spacer=13-15bp;gc_cont=0.494 -> GCF_002116735.1_ASM211673v1_NZ_CP020931.1_2073___2276348___2276665___-1___ID_1_2073_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.494
+GCF_003997005.1_ASM399700v1_NZ_RPOA01000001.1_1227_#_1311008_#_1311325_#_1_#_ID=1_1227;partial=00;start_type=ATG;rbs_motif=3Base/5BMM;rbs_spacer=13-15bp;gc_cont=0.494 -> GCF_003997005.1_ASM399700v1_NZ_RPOA01000001.1_1227___1311008___1311325___1___ID_1_1227_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.494
+GCF_018424725.1_ASM1842472v1_NZ_QTNR01000034.1_9_#_4824_#_5141_#_1_#_ID=27_9;partial=00;start_type=ATG;rbs_motif=3Base/5BMM;rbs_spacer=13-15bp;gc_cont=0.494 -> GCF_018424725.1_ASM1842472v1_NZ_QTNR01000034.1_9___4824___5141___1___ID_27_9_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.494
+GCF_900114695.1_IMG-taxon_2619618959_annotated_assembly_NZ_FOTV01000040.1_9_#_5049_#_5366_#_1_#_ID=50_9;partial=00;start_type=ATG;rbs_motif=3Base/5BMM;rbs_spacer=13-15bp;gc_cont=0.491 -> GCF_900114695.1_IMG-taxon_2619618959_annotated_assembly_NZ_FOTV01000040.1_9___5049___5366___1___ID_50_9_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.491
+GCF_902498775.1_NZ_LR701486.1_1276_#_1364284_#_1364601_#_1_#_ID=3_1276;partial=00;start_type=ATG;rbs_motif=3Base/5BMM;rbs_spacer=13-15bp;gc_cont=0.491 -> GCF_902498775.1_NZ_LR701486.1_1276___1364284___1364601___1___ID_3_1276_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.491
+GCF_902506385.1_NZ_LR733269.1_3435_#_3778143_#_3778460_#_-1_#_ID=2_3435;partial=00;start_type=ATG;rbs_motif=3Base/5BMM;rbs_spacer=13-15bp;gc_cont=0.491 -> GCF_902506385.1_NZ_LR733269.1_3435___3778143___3778460___-1___ID_2_3435_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.491
+Marinobacter_salarius_SZUA-1276|SZUA-1276_02732_[SZUA-1276_50:124045..124362]_[Sulfurtransferase_TusE] -> Marinobacter_salarius_SZUA-1276|SZUA-1276_02732__SZUA-1276_50_124045..124362___Sulfurtransferase_TusE_
+GuaymasBasin~~k95_681605_flag=0_multi=13.0691_len=13516_8 -> GuaymasBasin__k95_681605_flag_0_multi_13.0691_len_13516_8
+LauBasin.Mariner~~k95_182687_flag=0_multi=38.4736_len=153290_fragment_1_31 -> LauBasin.Mariner__k95_182687_flag_0_multi_38.4736_len_153290_fragment_1_31
+LauBasin.TahiMoana~~k95_155757_flag=0_multi=26.3053_len=244348_fragment_1_160 -> LauBasin.TahiMoana__k95_155757_flag_0_multi_26.3053_len_244348_fragment_1_160
+
+                                                                                                                                                                                         Gap/Ambiguity  Composition  p-value
+   1  YP_003524119.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sideroxydans_lithotrophicus_ES-1__RspA_GroupIII                                                                                0.91%    passed     16.38%
+   2  YP_008546905.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sulfuricella_denitrificans_skB26__RspA_GroupIII                                                                                2.73%    passed     33.69%
+   3  WP_018506768.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiobacillus_thioparus__RspA_GroupIII                                                                                           4.55%    passed     15.53%
+   4  YP_003442032.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Allochromatium_vinosum_DSM_180__RspA_GroupIII                                                                                   0.00%    failed      0.08%
+   5  WP_020507802.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Lamprocystis_purpurea__RspA_GroupIII                                                                                            3.64%    passed      6.83%
+   6  EGV20144.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiocapsa_marina_5811__RspA_GroupIII                                                                                               0.00%    passed     25.20%
+   7  YP_006413815.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiocystis_violascens_DSM_198__RspA_GroupIII                                                                                    0.00%    failed      0.71%
+   8  YP_007245665.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioflavicoccus_mobilis_8321__RspA_GroupIII                                                                                     0.00%    failed      0.43%
+   9  EIC22896.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiorhodovibrio_sp._970__RspA_GroupIII                                                                                             2.73%    failed      3.26%
+  10  YP_741840.1_DsrC_family_protein__Alkalilimnicola_ehrlichii_MLHE-1__RspA_GroupIII                                                                                                           0.00%    passed     45.78%
+  11  YP_002514347.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_sulfidiphilus_HL-EbGr7__RspA_GroupIII                                                                          1.82%    passed      6.00%
+  12  WP_018232109.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_thiocyanodenitrificans__RspA_GroupIII                                                                          1.82%    passed     81.70%
+  13  WP_020394313.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiolinea_disciformis__RspA_GroupIII                                                                                            5.45%    passed     11.04%
+  14  CAM77890.1_DsrC-like_protein__Magnetospirillum_gryphiswaldense_MSR-1__RspA_GroupII                                                                                                         2.73%    failed      3.17%
+  15  YP_003525443.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sideroxydans_lithotrophicus_ES-1__RspA_GroupII                                                                                 8.18%    passed     55.12%
+  16  YP_008545867.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sulfuricella_denitrificans_skB26__RspA_GroupII                                                                                 8.18%    passed     91.49%
+  17  WP_018506850.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiobacillus_thioparus__RspA_GroupII                                                                                           10.00%    passed     65.50%
+  18  WP_020503853.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Lamprocystis_purpurea__RspA_GroupII                                                                                             1.82%    passed      9.15%
+  19  EGV20839.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Marichromatium_purpuratum_984__RspA_GroupII                                                                                        0.00%    passed      9.30%
+  20  EGV20081.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiocapsa_marina_5811__RspA_GroupII                                                                                                0.00%    passed     10.09%
+  21  YP_006414739.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiocystis_violascens_DSM_198__RspA_GroupII                                                                                     0.00%    passed     32.87%
+  22  YP_007243819.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioflavicoccus_mobilis_8321__RspA_GroupII                                                                                      0.00%    failed      4.36%
+  23  EIC22973.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiorhodovibrio_sp._970__RspA_GroupII                                                                                              0.00%    passed     20.04%
+  24  YP_002515133.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_sulfidiphilus_HL-EbGr7__RspA_GroupII                                                                           0.00%    passed     25.88%
+  25  WP_018233114.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_thiocyanodenitrificans__RspA_GroupII                                                                           8.18%    passed     10.66%
+  26  EHR72148.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Burkholderiales_bacterium_JOSHI_001__RspA_GroupI                                                                                   2.73%    passed     81.15%
+  27  YP_003524309.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sideroxydans_lithotrophicus_ES-1__RspA_GroupI                                                                                  2.73%    passed     97.59%
+  28  YP_008547553.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sulfuricella_denitrificans_skB26__RspA_GroupI                                                                                  2.73%    passed     85.19%
+  29  WP_018507223.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiobacillus_thioparus__RspA_GroupI                                                                                             1.82%    passed     99.41%
+  30  WP_020504940.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Lamprocystis_purpurea__RspA_GroupI                                                                                              0.91%    passed     96.72%
+  31  EGV22405.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Marichromatium_purpuratum_984__RspA_GroupI                                                                                         0.91%    passed     79.17%
+  32  YP_006412724.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiocystis_violascens_DSM_198__RspA_GroupI                                                                                      0.91%    passed     91.08%
+  33  YP_007243027.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioflavicoccus_mobilis_8321__RspA_GroupI                                                                                       0.91%    passed     89.91%
+  34  EIC21204.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiorhodovibrio_sp._970__RspA_GroupI                                                                                               0.91%    passed     93.65%
+  35  YP_002514248.1_DsrC_family_protein__Thioalkalivibrio_sulfidiphilus_HL-EbGr7__RspA_GroupI                                                                                                   0.00%    passed     37.41%
+  36  WP_018232014.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_thiocyanodenitrificans__RspA_GroupI                                                                            0.00%    passed     93.73%
+  37  AHE98846.1_DsrC__Thioalkalivibrio_paradoxus_ARh_1__RspA_GroupI                                                                                                                             0.00%    passed     87.04%
+  38  WP_020393551.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiolinea_disciformis__RspA_GroupI                                                                                              0.00%    passed     83.66%
+  39  YP_903842.1_DsrC_family_protein__Candidatus_Ruthia_magnifica_str._Cm__Calyptogena_magnifica___RspA_GroupI                                                                                  4.55%    failed      2.85%
+  40  CAM77304.1_DsrC-like_protein__Magnetospirillum_gryphiswaldense_MSR-1__TusE                                                                                                                 0.00%    passed     96.56%
+  41  YP_003523872.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sideroxydans_lithotrophicus_ES-1__TusE                                                                                        12.73%    passed     25.28%
+  42  YP_008546746.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sulfuricella_denitrificans_skB26__TusE                                                                                        12.73%    passed     92.53%
+  43  YP_316416.1_DsrC_-like_protein__Thiobacillus_denitrificans_ATCC_25259__TusE                                                                                                                0.00%    passed     86.05%
+  44  WP_018507402.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiobacillus_thioparus__TusE                                                                                                    0.00%    passed     69.45%
+  45  YP_007216490.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_nitratireducens_DSM_14787__TusE                                                                               12.73%    passed     34.85%
+  46  YP_002512450.1_DsrC_-like_protein__Thioalkalivibrio_sulfidiphilus_HL-EbGr7__TusE                                                                                                           0.00%    passed     99.79%
+  47  WP_018233019.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_thiocyanodenitrificans__TusE                                                                                   6.36%    passed     27.02%
+  48  WP_020394365.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiolinea_disciformis__TusE                                                                                                    10.91%    passed     99.39%
+  49  EIJ35091.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiothrix_nivea_DSM_5205__TusE                                                                                                    10.91%    passed     56.61%
+  50  YP_904067.1_sulfite_reductase__gamma_subunit-related_protein__Candidatus_Ruthia_magnifica_str._Cm__Calyptogena_magnifica___TusE                                                           12.73%    passed     35.04%
+  51  YP_001219635.1_intracellular_sulfur_oxidation_protein_DsrC__Candidatus_Vesicomyosocius_okutanii_HA__TusE                                                                                  12.73%    passed     33.57%
+  52  YP_003442339.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Allochromatium_vinosum_DSM_180__dsrC3                                                                                           9.09%    passed     88.58%
+  53  WP_020507454.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Lamprocystis_purpurea__dsrC3                                                                                                    8.18%    passed     61.46%
+  54  EGV18614.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiocapsa_marina_5811__dsrC3                                                                                                       9.09%    passed     85.42%
+  55  YP_006413318.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiocystis_violascens_DSM_198__dsrC3                                                                                            9.09%    passed     70.57%
+  56  YP_007245142.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioflavicoccus_mobilis_8321__dsrC3                                                                                             9.09%    passed     43.66%
+  57  EIC19415.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiorhodovibrio_sp._970__dsrC3                                                                                                    10.91%    passed     92.80%
+  58  CAM75803.1_DsrC-like_protein__Magnetospirillum_gryphiswaldense_MSR-1__dsrC                                                                                                                 0.00%    passed     86.35%
+  59  EHR72140.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Burkholderiales_bacterium_JOSHI_001__dsrC                                                                                          0.00%    passed     93.50%
+  60  YP_003524301.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Sideroxydans_lithotrophicus_ES-1__dsrC                                                                                         0.00%    passed     37.43%
+  61  YP_008547545.1_sulfite_reductase__Sulfuricella_denitrificans_skB26__dsrC                                                                                                                   0.00%    passed     86.68%
+  62  YP_316238.1_sulfite_reductase__Thiobacillus_denitrificans_ATCC_25259__dsrC                                                                                                                 0.00%    passed     70.68%
+  63  WP_018507215.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiobacillus_thioparus__dsrC                                                                                                    0.00%    passed     78.08%
+  64  YP_003443227.1_DsrC_protein__Allochromatium_vinosum_DSM_180__dsrC                                                                                                                          0.00%    passed     98.71%
+  65  WP_020504931.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Lamprocystis_purpurea__dsrC                                                                                                     0.00%    passed     98.70%
+  66  EGV22415.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Marichromatium_purpuratum_984__dsrC                                                                                                0.00%    passed     96.34%
+  67  EGV17851.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiocapsa_marina_5811__dsrC                                                                                                        0.00%    passed     97.53%
+  68  YP_007242653.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioflavicoccus_mobilis_8321__dsrC                                                                                              0.00%    passed     97.76%
+  69  EIC21195.1_sulfur_relay_protein__TusE/DsrC/DsvC_family__Thiorhodovibrio_sp._970__dsrC                                                                                                      0.00%    passed     98.89%
+  70  YP_742494.1_DsrC_family_protein__Alkalilimnicola_ehrlichii_MLHE-1__dsrC                                                                                                                    0.00%    passed     80.45%
+  71  YP_002514257.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_sulfidiphilus_HL-EbGr7__dsrC                                                                                   0.00%    passed     79.33%
+  72  WP_018232023.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thioalkalivibrio_thiocyanodenitrificans__dsrC                                                                                   0.00%    passed     73.49%
+  73  AHE98855.1_sulfur_transfer_protein_TusE__Thioalkalivibrio_paradoxus_ARh_1__dsrC                                                                                                            0.00%    passed     66.34%
+  74  WP_020397041.1_TusE/DsrC/DsvC_family_sulfur_relay_protein__Thiolinea_disciformis__dsrC                                                                                                     0.00%    passed     96.61%
+  75  YP_904052.1_DsrC_family_protein__Candidatus_Ruthia_magnifica_str._Cm__Calyptogena_magnifica___dsrC                                                                                         2.73%    passed     98.36%
+  76  YP_001219620.1_intracellular_sulfur_oxidation_protein_DsrC__Candidatus_Vesicomyosocius_okutanii_HA__dsrC                                                                                   2.73%    passed     98.35%
+  77  Mariner_1000289_25                                                                                                                                                                         2.73%    passed     99.96%
+  78  TahiMoana_1000070_23                                                                                                                                                                       2.73%    passed     99.96%
+  79  KiloMoana_10000372_12                                                                                                                                                                      2.73%    passed     99.96%
+  80  Abe_10000200_61                                                                                                                                                                            2.73%    passed     99.96%
+  81  GBIDBA_10002116_29                                                                                                                                                                         2.73%    passed     61.95%
+  82  Ga0052187_10045_90                                                                                                                                                                         2.73%    passed     73.75%
+  83  Ga0052187_10048_89                                                                                                                                                                         2.73%    passed     73.75%
+  84  Ga0052187_10081_117                                                                                                                                                                        2.73%    passed     99.96%
+  85  Ga0052187_10083_110                                                                                                                                                                        2.73%    passed     99.96%
+  86  Ga0052187_10086_104                                                                                                                                                                        2.73%    passed     99.96%
+  87  Ga0052187_10089_129                                                                                                                                                                        2.73%    passed     99.96%
+  88  Ga0098055_1003148_5                                                                                                                                                                        2.73%    passed     95.15%
+  89  Ga0098053_1001797_10                                                                                                                                                                       2.73%    passed     95.15%
+  90  GCA_900114695.1_IMG-taxon_2619618959_annotated_assembly_FOTV01000040.1_9___5049___5366___1___ID_50_9_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.491       6.36%    passed     79.14%
+  91  GCA_902498775.1_LR701486.1_1276___1364284___1364601___1___ID_3_1276_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.491                                        6.36%    passed     79.14%
+  92  GCA_902506385.1_LR733269.1_3434___3778143___3778460___-1___ID_2_3434_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.491                                       6.36%    passed     79.14%
+  93  GCF_000744695.1_ASM74469v1_NZ_JQMK01000006.1_178___184630___184947___1___ID_6_178_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.497                          6.36%    passed     79.14%
+  94  GCF_001924925.1_ASM192492v1_NZ_LQXJ01000019.1_43___39962___40279___1___ID_19_43_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.494                            6.36%    passed     79.14%
+  95  GCF_002116735.1_ASM211673v1_NZ_CP020931.1_2073___2276348___2276665___-1___ID_1_2073_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.494                        6.36%    passed     79.14%
+  96  GCF_003997005.1_ASM399700v1_NZ_RPOA01000001.1_1227___1311008___1311325___1___ID_1_1227_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.494                     6.36%    passed     79.14%
+  97  GCF_018424725.1_ASM1842472v1_NZ_QTNR01000034.1_9___4824___5141___1___ID_27_9_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.494                               6.36%    passed     79.14%
+  98  GCF_900114695.1_IMG-taxon_2619618959_annotated_assembly_NZ_FOTV01000040.1_9___5049___5366___1___ID_50_9_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.491    6.36%    passed     79.14%
+  99  GCF_902498775.1_NZ_LR701486.1_1276___1364284___1364601___1___ID_3_1276_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.491                                     6.36%    passed     79.14%
+ 100  GCF_902506385.1_NZ_LR733269.1_3435___3778143___3778460___-1___ID_2_3435_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.491                                    6.36%    passed     79.14%
+ 101  Marinobacter_salarius_SZUA-1276|SZUA-1276_02732__SZUA-1276_50_124045..124362___Sulfurtransferase_TusE_                                                                                     6.36%    passed     79.14%
+ 102  GuaymasBasin__k95_681605_flag_0_multi_13.0691_len_13516_8                                                                                                                                  2.73%    passed     61.95%
+ 103  LauBasin.Mariner__k95_182687_flag_0_multi_38.4736_len_153290_fragment_1_31                                                                                                                 6.36%    passed     79.14%
+ 104  LauBasin.TahiMoana__k95_155757_flag_0_multi_26.3053_len_244348_fragment_1_160                                                                                                              6.36%    passed     79.14%
+****  TOTAL                                                                                                                                                                                      3.48%  7 sequences failed composition chi2 test (p-value<5%; df=19)
+NOTE: TahiMoana_1000070_23 is identical to Mariner_1000289_25 but kept for subsequent analysis
+NOTE: GuaymasBasin__k95_681605_flag_0_multi_13.0691_len_13516_8 is identical to GBIDBA_10002116_29 but kept for subsequent analysis
+NOTE: Ga0052187_10048_89 is identical to Ga0052187_10045_90 but kept for subsequent analysis
+NOTE: Ga0098053_1001797_10 is identical to Ga0098055_1003148_5 but kept for subsequent analysis
+NOTE: GCA_902498775.1_LR701486.1_1276___1364284___1364601___1___ID_3_1276_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.491 is identical to GCA_900114695.1_IMG-taxon_2619618959_annotated_assembly_FOTV01000040.1_9___5049___5366___1___ID_50_9_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.491 but kept for subsequent analysis
+NOTE: 18 identical sequences (see below) will be ignored for subsequent analysis
+NOTE: KiloMoana_10000372_12 (identical to Mariner_1000289_25) is ignored but added at the end
+NOTE: Abe_10000200_61 (identical to Mariner_1000289_25) is ignored but added at the end
+NOTE: Ga0052187_10081_117 (identical to Mariner_1000289_25) is ignored but added at the end
+NOTE: Ga0052187_10083_110 (identical to Mariner_1000289_25) is ignored but added at the end
+NOTE: Ga0052187_10086_104 (identical to Mariner_1000289_25) is ignored but added at the end
+NOTE: Ga0052187_10089_129 (identical to Mariner_1000289_25) is ignored but added at the end
+NOTE: GCA_902506385.1_LR733269.1_3434___3778143___3778460___-1___ID_2_3434_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.491 (identical to GCA_900114695.1_IMG-taxon_2619618959_annotated_assembly_FOTV01000040.1_9___5049___5366___1___ID_50_9_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.491) is ignored but added at the end
+NOTE: GCF_000744695.1_ASM74469v1_NZ_JQMK01000006.1_178___184630___184947___1___ID_6_178_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.497 (identical to GCA_900114695.1_IMG-taxon_2619618959_annotated_assembly_FOTV01000040.1_9___5049___5366___1___ID_50_9_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.491) is ignored but added at the end
+NOTE: GCF_001924925.1_ASM192492v1_NZ_LQXJ01000019.1_43___39962___40279___1___ID_19_43_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.494 (identical to GCA_900114695.1_IMG-taxon_2619618959_annotated_assembly_FOTV01000040.1_9___5049___5366___1___ID_50_9_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.491) is ignored but added at the end
+NOTE: GCF_002116735.1_ASM211673v1_NZ_CP020931.1_2073___2276348___2276665___-1___ID_1_2073_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.494 (identical to GCA_900114695.1_IMG-taxon_2619618959_annotated_assembly_FOTV01000040.1_9___5049___5366___1___ID_50_9_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.491) is ignored but added at the end
+NOTE: GCF_003997005.1_ASM399700v1_NZ_RPOA01000001.1_1227___1311008___1311325___1___ID_1_1227_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.494 (identical to GCA_900114695.1_IMG-taxon_2619618959_annotated_assembly_FOTV01000040.1_9___5049___5366___1___ID_50_9_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.491) is ignored but added at the end
+NOTE: GCF_018424725.1_ASM1842472v1_NZ_QTNR01000034.1_9___4824___5141___1___ID_27_9_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.494 (identical to GCA_900114695.1_IMG-taxon_2619618959_annotated_assembly_FOTV01000040.1_9___5049___5366___1___ID_50_9_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.491) is ignored but added at the end
+NOTE: GCF_900114695.1_IMG-taxon_2619618959_annotated_assembly_NZ_FOTV01000040.1_9___5049___5366___1___ID_50_9_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.491 (identical to GCA_900114695.1_IMG-taxon_2619618959_annotated_assembly_FOTV01000040.1_9___5049___5366___1___ID_50_9_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.491) is ignored but added at the end
+NOTE: GCF_902498775.1_NZ_LR701486.1_1276___1364284___1364601___1___ID_3_1276_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.491 (identical to GCA_900114695.1_IMG-taxon_2619618959_annotated_assembly_FOTV01000040.1_9___5049___5366___1___ID_50_9_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.491) is ignored but added at the end
+NOTE: GCF_902506385.1_NZ_LR733269.1_3435___3778143___3778460___-1___ID_2_3435_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.491 (identical to GCA_900114695.1_IMG-taxon_2619618959_annotated_assembly_FOTV01000040.1_9___5049___5366___1___ID_50_9_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.491) is ignored but added at the end
+NOTE: Marinobacter_salarius_SZUA-1276|SZUA-1276_02732__SZUA-1276_50_124045..124362___Sulfurtransferase_TusE_ (identical to GCA_900114695.1_IMG-taxon_2619618959_annotated_assembly_FOTV01000040.1_9___5049___5366___1___ID_50_9_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.491) is ignored but added at the end
+NOTE: LauBasin.Mariner__k95_182687_flag_0_multi_38.4736_len_153290_fragment_1_31 (identical to GCA_900114695.1_IMG-taxon_2619618959_annotated_assembly_FOTV01000040.1_9___5049___5366___1___ID_50_9_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.491) is ignored but added at the end
+NOTE: LauBasin.TahiMoana__k95_155757_flag_0_multi_26.3053_len_244348_fragment_1_160 (identical to GCA_900114695.1_IMG-taxon_2619618959_annotated_assembly_FOTV01000040.1_9___5049___5366___1___ID_50_9_partial_00_start_type_ATG_rbs_motif_3Base/5BMM_rbs_spacer_13-15bp_gc_cont_0.491) is ignored but added at the end
+Alignment was printed to dsrC_PlumeViruses_Refs_renamed_mafftAuto_masked.fasta.uniqueseq.phy
+
+For your convenience alignment with unique sequences printed to dsrC_PlumeViruses_Refs_renamed_mafftAuto_masked.fasta.uniqueseq.phy
+
+Creating fast initial parsimony tree by random order stepwise addition...
+7.204 seconds, parsimony score: 1981 (based on 110 sites)
+Measuring multi-threading efficiency up to 15 CPU cores
+Increase to 10 rounds for branch lengths
+57 trees examined
+Threads: 1 / Time: 15.118 sec / Speedup: 1.000 / Efficiency: 100% / LogL: -15385
+Threads: 2 / Time: 9.108 sec / Speedup: 1.660 / Efficiency: 83% / LogL: -15385
+Threads: 3 / Time: 9.528 sec / Speedup: 1.587 / Efficiency: 53% / LogL: -15385
+Threads: 4 / Time: 8.598 sec / Speedup: 1.758 / Efficiency: 44% / LogL: -15385
+BEST NUMBER OF THREADS: 2
+
+Perform fast likelihood tree search using LG+G model...
+Estimate model parameters (epsilon = 5.000)
+Perform nearest neighbor interchange...
+Estimate model parameters (epsilon = 1.000)
+1. Initial log-likelihood: -9627.300
+Optimal log-likelihood: -9626.899
+Gamma shape alpha: 1.587
+Parameters optimization took 1 rounds (0.099 sec)
+Time for fast ML tree search: 0.719 seconds
+
+NOTE: ModelFinder requires 18 MB RAM!
+ModelFinder will test up to 462 protein models (sample size: 110) ...
+ No. Model         -LnL         df  AIC          AICc         BIC
+  1  LG            9917.373     169 20172.746    77632.746    20629.128
+  2  LG+G4         9626.898     170 19593.797    77733.797    20052.878
+  3  LG+R2         9677.653     171 19697.305    78521.305    20159.088
+  4  LG+R3         9633.554     173 19613.107    79817.107    20080.290
+  5  LG+R4         9621.919     175 19593.837    81193.837    20066.421
+  6  LG+R5         9619.222     177 19592.445    82604.445    20070.430
+ 13  LG+F+G4       9614.893     189 19607.786    91427.786    20118.177
+ 24  WAG+G4        9659.148     170 19658.295    77798.295    20117.377
+ 35  WAG+F+G4      9649.337     189 19676.674    91496.674    20187.065
+ 46  JTT+G4        9717.232     170 19774.464    77914.464    20233.546
+ 57  JTT+F+G4      9702.822     189 19783.645    91603.645    20294.036
+ 68  JTTDCMut+G4   9713.054     170 19766.108    77906.108    20225.189
+ 79  JTTDCMut+F+G4 9697.393     189 19772.786    91592.786    20283.177
+ 90  DCMut+G4      9773.905     170 19887.809    78027.809    20346.891
+101  DCMut+F+G4    9716.273     189 19810.547    91630.547    20320.938
+112  VT+G4         9688.097     170 19716.195    77856.195    20175.277
+123  VT+F+G4       9683.759     189 19745.517    91565.517    20255.908
+134  PMB+G4        9770.521     170 19881.042    78021.042    20340.124
+145  PMB+F+G4      9753.727     189 19885.455    91705.455    20395.846
+156  Blosum62+G4   9759.522     170 19859.044    77999.044    20318.126
+167  Blosum62+F+G4 9748.224     189 19874.448    91694.448    20384.839
+178  Dayhoff+G4    9772.570     170 19885.141    78025.141    20344.223
+189  Dayhoff+F+G4  9714.957     189 19807.914    91627.914    20318.305
+200  mtREV+G4      10343.220    170 21026.440    79166.440    21485.522
+211  mtREV+F+G4    9942.344     189 20262.688    92082.688    20773.078
+222  mtART+G4      10562.559    170 21465.118    79605.118    21924.199
+233  mtART+F+G4    10096.269    189 20570.539    92390.539    21080.930
+244  mtZOA+G4      10225.211    170 20790.422    78930.422    21249.504
+255  mtZOA+F+G4    9898.582     189 20175.165    91995.165    20685.556
+266  mtMet+G4      10434.435    170 21208.870    79348.870    21667.952
+277  mtMet+F+G4    9939.541     189 20257.082    92077.082    20767.473
+288  mtVer+G4      10456.063    170 21252.126    79392.126    21711.208
+299  mtVer+F+G4    10104.993    189 20587.986    92407.986    21098.377
+310  mtInv+G4      10503.048    170 21346.096    79486.096    21805.178
+321  mtInv+F+G4    9857.671     189 20093.341    91913.341    20603.732
+332  mtMAM+G4      10637.637    170 21615.274    79755.274    22074.356
+343  mtMAM+F+G4    10239.115    189 20856.229    92676.229    21366.620
+354  HIVb+G4       9991.013     170 20322.027    78462.027    20781.109
+365  HIVb+F+G4     9973.334     189 20324.669    92144.669    20835.060
+376  HIVw+G4       10498.814    170 21337.628    79477.628    21796.710
+387  HIVw+F+G4     10320.586    189 21019.173    92839.173    21529.564
+398  FLU+G4        9958.453     170 20256.906    78396.906    20715.988
+409  FLU+F+G4      9870.022     189 20118.044    91938.044    20628.435
+420  rtREV+G4      9751.919     170 19843.838    77983.838    20302.920
+431  rtREV+F+G4    9674.257     189 19726.515    91546.515    20236.905
+442  cpREV+G4      9798.924     170 19937.847    78077.847    20396.929
+453  cpREV+F+G4    9779.159     189 19936.317    91756.317    20446.708
+Akaike Information Criterion:           LG+R5
+Corrected Akaike Information Criterion: LG
+Bayesian Information Criterion:         LG+G4
+Best-fit model: LG+G4 chosen according to BIC
+
+All model information printed to dsrC_PlumeViruses_Refs_renamed_mafftAuto_masked.fasta.model.gz
+CPU time for ModelFinder: 683.936 seconds (0h:11m:23s)
+Wall-clock time for ModelFinder: 62.095 seconds (0h:1m:2s)
+Generating 1000 samples for ultrafast bootstrap (seed: 963439)...
+
+NOTE: 7 MB RAM (0 GB) is required!
+Estimate model parameters (epsilon = 0.100)
+1. Initial log-likelihood: -9626.898
+Optimal log-likelihood: -9626.895
+Gamma shape alpha: 1.594
+Parameters optimization took 1 rounds (0.049 sec)
+Computing ML distances based on estimated model parameters... 0.714 sec
+Computing BIONJ tree...
+0.003 seconds
+Log-likelihood of BIONJ tree: -9678.690
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 98 parsimony trees... 1.251 second
+Computing log-likelihood of 98 initial trees ... 1.943 seconds
+Current best score: -9626.895
+
+Do NNI search on 20 best initial trees
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 1: -9625.568
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 2: -9617.508
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 4: -9616.864
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 7: -9616.613
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 10: -9616.433
+Iteration 10 / LogL: -9616.433 / Time: 0h:0m:8s
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 15: -9613.452
+Iteration 20 / LogL: -9621.896 / Time: 0h:0m:13s
+Finish initializing candidate tree set (20)
+Current best tree score: -9613.452 / CPU time: 13.397
+Number of iterations: 20
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 22: -9613.218
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 25: -9609.091
+Iteration 30 / LogL: -9609.570 / Time: 0h:0m:18s (0h:1m:1s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 33: -9608.916
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 34: -9608.639
+Iteration 40 / LogL: -9633.270 / Time: 0h:0m:23s (0h:0m:56s left)
+Iteration 50 / LogL: -9647.814 / Time: 0h:0m:28s (0h:0m:48s left)
+Iteration 60 / LogL: -9608.750 / Time: 0h:0m:32s (0h:0m:41s left)
+Iteration 70 / LogL: -9642.820 / Time: 0h:0m:37s (0h:0m:34s left)
+Iteration 80 / LogL: -9609.394 / Time: 0h:0m:41s (0h:0m:28s left)
+Iteration 90 / LogL: -9608.808 / Time: 0h:0m:45s (0h:0m:22s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 92: -9608.348
+Iteration 100 / LogL: -9611.181 / Time: 0h:0m:50s (0h:0m:46s left)
+Iteration 110 / LogL: -9610.601 / Time: 0h:0m:54s (0h:0m:41s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 117: -9607.729
+Iteration 120 / LogL: -9610.470 / Time: 0h:0m:59s (0h:0m:48s left)
+Iteration 130 / LogL: -9618.995 / Time: 0h:1m:4s (0h:0m:43s left)
+Iteration 140 / LogL: -9609.362 / Time: 0h:1m:8s (0h:0m:37s left)
+Iteration 150 / LogL: -9632.586 / Time: 0h:1m:13s (0h:0m:32s left)
+Iteration 160 / LogL: -9610.809 / Time: 0h:1m:18s (0h:0m:27s left)
+Iteration 170 / LogL: -9609.162 / Time: 0h:1m:22s (0h:0m:22s left)
+Iteration 180 / LogL: -9608.085 / Time: 0h:1m:27s (0h:0m:18s left)
+Iteration 190 / LogL: -9608.859 / Time: 0h:1m:31s (0h:0m:13s left)
+Iteration 200 / LogL: -9608.159 / Time: 0h:1m:36s (0h:0m:8s left)
+Iteration 210 / LogL: -9625.820 / Time: 0h:1m:40s (0h:0m:3s left)
+Refining ufboot trees with NNI 1 branch...
+100 samples done
+200 samples done
+300 samples done
+400 samples done
+500 samples done
+600 samples done
+700 samples done
+800 samples done
+900 samples done
+1000 samples done
+Total 1000 ufboot trees refined
+TREE SEARCH COMPLETED AFTER 218 ITERATIONS / Time: 0h:3m:36s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+1. Initial log-likelihood: -9607.729
+Optimal log-likelihood: -9607.728
+Gamma shape alpha: 1.555
+Parameters optimization took 1 rounds (0.056 sec)
+BEST SCORE FOUND : -9607.728
+Creating bootstrap support values...
+Split supports printed to NEXUS file dsrC_PlumeViruses_Refs_renamed_mafftAuto_masked.fasta.splits.nex
+Total tree length: 31.431
+
+Total number of iterations: 218
+CPU time used for tree search: 426.477 sec (0h:7m:6s)
+Wall-clock time used for tree search: 216.359 sec (0h:3m:36s)
+Total CPU time used: 427.926 sec (0h:7m:7s)
+Total wall-clock time used: 217.209 sec (0h:3m:37s)
+UFBoot trees printed to dsrC_PlumeViruses_Refs_renamed_mafftAuto_masked.fasta.ufboot
+
+Computing bootstrap consensus tree...
+Reading input file dsrC_PlumeViruses_Refs_renamed_mafftAuto_masked.fasta.splits.nex...
+86 taxa and 955 splits.
+Consensus tree written to dsrC_PlumeViruses_Refs_renamed_mafftAuto_masked.fasta.contree
+Reading input trees file dsrC_PlumeViruses_Refs_renamed_mafftAuto_masked.fasta.contree
+Log-likelihood of consensus tree: -9611.674
+
+Analysis results written to: 
+  IQ-TREE report:                dsrC_PlumeViruses_Refs_renamed_mafftAuto_masked.fasta.iqtree
+  Maximum-likelihood tree:       dsrC_PlumeViruses_Refs_renamed_mafftAuto_masked.fasta.treefile
+  Likelihood distances:          dsrC_PlumeViruses_Refs_renamed_mafftAuto_masked.fasta.mldist
+
+Ultrafast bootstrap approximation results written to:
+  Split support values:          dsrC_PlumeViruses_Refs_renamed_mafftAuto_masked.fasta.splits.nex
+  Consensus tree:                dsrC_PlumeViruses_Refs_renamed_mafftAuto_masked.fasta.contree
+  UFBoot trees:                  dsrC_PlumeViruses_Refs_renamed_mafftAuto_masked.fasta.ufboot
+  Screen log file:               dsrC_PlumeViruses_Refs_renamed_mafftAuto_masked.fasta.log
+
+Date and Time: Wed Apr 20 14:15:29 2022
