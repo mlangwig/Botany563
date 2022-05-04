@@ -62,6 +62,21 @@ If upstream channel is not the one you expect (in our case /crsl4/phylo-class-so
 git remote add upstream https://github.com/crsl4/phylo-class-social
 ```
 
+If you need to remove a folder you accidentally added that is too large (you get an error about file size at git push). In this scenario, just adding the folder name to the .gitignore will not remove the folder because you need to remove it from the cache. You can do that *if you added a file in the latest commit that was too large* using this command:
+```
+git rm -rf --cached mrbayes
+git add mrbayes
+git commit -m "fixed mrbayes gitignore"
+```
+
+If the problem was several git commits ago do this:
+
+```
+git log --oneline
+
+git rebase -i c095474
+```
+
 # Reproducibility Homework Part 3
 On Github website, fork from [here](https://github.com/crsl4/phylogenetics-class/blob/master/exercises/class-repos.md)
 
@@ -206,31 +221,29 @@ Relevant links and references:
 * [Progressive Alignments: Feng and Doolittle, 1987](https://link.springer.com/content/pdf/10.1007/BF02603120.pdf)
 * [Lecture 5, Solis-Lemus](https://github.com/crsl4/phylogenetics-class/blob/master/lecture-notes/lecture5.md)
 * [Purdue Topic 6](https://www.stat.purdue.edu/~junxie/topic6.pdf)
+* [Online Book: Multiple Sequence Alignment Methods, 2014](https://link.springer.com/book/10.1007/978-1-62703-646-7)
 
 #### **ClustalW**
 
-Dynamically varies gap penalties in a residue and position specific way. For example, gap penalties are increased if there are no gaps in a column but gaps occur in a nearby column. Distinct from Feng-Doolittle progressive alignments because uses profile alignment methods. 
+ClustalW was one of the earliest aligners and incorporated a novel position-specific scoring scheme and a weighting scheme for down weighting over-represented sequence groups (the W in ClustalW stands for weights). ClustalW dynamically varies gap penalties in a residue and position specific way. For example, gap penalties are increased if there are no gaps in a column but gaps occur in a nearby column. Distinct from Feng-Doolittle progressive alignments because uses profile alignment methods. 
 
-**Method**|**Strengths**|**Limitations**|**Assumptions**|**Usage notes**
-:-----:|:-----:|:-----:|:-----:|:-----:
-| ClustalW | •Fast and low RAM usage <br /> •Incorporates biologically relevant gap scoring | •Was lowest accuracy aligner in recent review (Pais et al. 2014) |  • | •   |
+The default behavior of ClustalW is to act as a progressive aligner. However, as of version 2.0, you can use the option -ITERATION=ALIGNMENT to refine the final alignment or the option -ITERATION=TREE to refine the alignment at each step of the progressive alignment.
+
+**Method**|**Strengths**|**Limitations**|**Usage notes**
+:-----:|:-----:|:-----:|:-----:
+| ClustalW | •Fast and low RAM usage <br /> •Incorporates biologically relevant gap scoring | •Was lowest accuracy aligner in recent review (Pais et al. 2014) | •Can do profile alignments to align two alignments <br /> •If using it, make sure sequence names are underscore separated because it cuts names off after a space <br /> •Can use your own gap opening penalty (-PWGAPOPEN=f) <br /> •Use the -ITERATION option to use iterative refinement of the alignment <br /> •The -STATS=file.txt option is great - a nice log file with stats about the alignment |
 
 References:
 
 * [ClustalW: Thompson, Higgins, and Gibson, 1994](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC308517/)
 * [Alignment Assessment: Pais et al., 2014](https://link.springer.com/article/10.1186/1748-7188-9-4#Sec12)
 * [Methods Review: Chatzou et al., 2016](https://academic.oup.com/bib/article/17/6/1009/2606431)
+* [ClustalW v2.0: Larkin et al., 2007](https://academic.oup.com/bioinformatics/article/23/21/2947/371686)
 
 #### **ClustalW Commands**
 Using the default parameters because unsure what options to select and I do not plan on using this alignment - I'm convinced from literature search that T-Coffee or MAFFT would be more accurate.
 
 ```
-clustalw -INFILE=dsrC_PlumeViruses_uniprot.faa -align -OUTFILE=dsrC_PlumeViruses_uniprot_clustalw.faa -OUTPUT=FASTA
-```
-
-```
-clustalw -INFILE=dsrC_PlumeViruses_Refs.faa -align -OUTFILE=dsrC_PlumeViruses_clustalw.faa -OUTPUT=FASTA
-
 clustalw -INFILE=dsrC_PlumeViruses_Refs_renamed.faa -align -OUTFILE=dsrC_PlumeViruses_Refs_renamed_clustalw.faa -OUTPUT=FASTA -STATS=dsrC_PlumeViruses_Refs_renamed_clustalw_stats.txt
 ```
 ### **Iterative refinement alignment**
@@ -252,9 +265,9 @@ Homologous regions identified using fast Fourier transform (FFT), where amino ac
 
 ![Calculation procedure for the MAFFT iterative refinement method (FFT-NS-I)](mafft_IterRefine.png)
 
-**Method**|**Strengths**|**Limitations**|**Assumptions**|**Usage notes**
-:-----:|:-----:|:-----:|:-----:|:-----:
-| MAFFT | •Faster than ClustalW and T-COFFEE <br /> •Has high accuracy options (slower, L-INS-i and G-INS-i) <br /> •Compared against other aligners and was among top performers | •  | • | •Defaults set assuming inputs are distantly related   | •BLOSUM62 matrix by default for AA, 200PAM for DNA |
+**Method**|**Strengths**|**Limitations**|**Usage notes**
+:-----:|:-----:|:-----:|:-----:
+| MAFFT | •Faster than ClustalW and T-COFFEE <br /> •Has high accuracy options (slower, L-INS-i and G-INS-i) <br /> •Compared against other aligners and was among top performers | •  | •BLOSUM62 matrix by default for AA, 200PAM for DNA <br /> •Default gap opening penalty is 1.53 |
 
 References:
 
@@ -264,14 +277,6 @@ References:
 #### **MAFFT Commands**
 I am using MAFFT because it has been identified as a fast, higher accuracy aligner (Pais et al., 2014). In the help page they suggest using the auto option if you don't know which of their high accuracy options to use so trying that:
 ```
-mafft --auto dsrC_PlumeViruses_uniprot.faa > mafft_alignment/dsrC_PlumeViruses_uniprot_mafftAuto.faa
-```
-
-```
-mafft --auto dsrC_PlumeViruses_Refs.faa > mafft_alignment/dsrC_PlumeViruses_Refs_mafftAuto.faa
-```
-
-```
 conda activate mafft_v7.490
 
 mafft --auto dsrC_PlumeViruses_Refs_renamed.faa > mafft_alignment/dsrC_PlumeViruses_Refs_renamed_mafftAuto.faa
@@ -279,13 +284,20 @@ mafft --auto dsrC_PlumeViruses_Refs_renamed.faa > mafft_alignment/dsrC_PlumeViru
 
 ![MAFFT output](mafft_run.png)
 
-I downloaded the MAFFT alignment generated using the auto option and masked it in Geneious to remove columns with >50% gaps. This reduces non-informative data in the alignment and can make it easier to see when sequences are low quality or poorly aligned.
+I downloaded the MAFFT alignment generated using the auto option and masked it in Geneious to remove columns with >50% gaps. This reduces non-informative data in the alignment and can make it easier to see when sequences are low quality or poorly aligned. It can also increase computational efficiency to remove this data. If you do not have access to Geneious, gaps can be removed from alignments using free tools such as [TrimAl](https://academic.oup.com/bioinformatics/article/25/15/1972/213148) and [BMGE](https://link.springer.com/article/10.1186/1471-2148-10-210).
+
+### Considerations before moving from your alignment to phylogeny
+
+Keep in mind that phylogenetic methods assume your alignment is perfectly accurate. Ideally you should spend some time visualizing your alignment and understanding it's characteristics. For example, if you have a concatenated gene alignment of 20 genes for 300 species, how many of those 300 species have all 20 genes? How many have 19? 18? It is best practice to report these characteristics or have this information in a table to help the interpretation of your phylogenies.
+
+It is important to consider data errors (sequencing and annotation errors, contaminant sequences) in your alignment and how these could affect the phylogeny. Read here for more information: [Philippe et al., 2017](https://europeanjournaloftaxonomy.eu/index.php/ejt/article/view/407/859).
 
 ## **Phylogenies**
 
+**I'll repeat the same warning from alignment construction: every phylogeny is wrong but some are useful.**
+
 ### **Distance trees**
-Distance trees fit a tree to a matrix of pairwise genetic distances. First, pairwise distances are calculated based on the fraction of positions in which the two sequences differ. Next, this dissimilarity is converted into an evolutionary distance by applying an evolutionary model or a substitution model (e.g., Jukes Cantor) to estimate the number of substitutions that occurred. Finally, the tree topology can be inferred on the basis of the estimated 
-evolutionary distances.
+Distance trees fit a tree to a matrix of pairwise genetic distances. First, pairwise distances are calculated based on the fraction of positions in which the two sequences differ. Next, this dissimilarity is converted into an evolutionary distance by applying an evolutionary model or a substitution model (e.g., Jukes Cantor) to estimate the number of substitutions that occurred. Finally, the tree topology can be inferred on the basis of the estimated evolutionary distances.
 
 Substitution models used to calculate the evolutionary distance are worth reviewing in and of themselves. They are used in all phylogenetic methods and can have a major effect on tree inference. A lot of new programs have options to test the best substitution model that fits your data. Here is a resource further explaining distance methods and substitution models (evolutionary models): [Nakhlel](https://www.cs.rice.edu/~nakhleh/COMP571/Slides/Phylogenetics-DistanceMethods-Full.pdf)
 
@@ -302,7 +314,7 @@ Relevant links and references:
 
 ### **Parsimony trees**
 
-**Maximum Parsimony**: This method seeks to minimize the evolutionary change required to explain the data. In other words, the tree with the fewest common ancestors in most likely. It does not rely on models of evolution and is a character-based method (utilizes 4 nucleotides or 20 amino acids).
+**Maximum Parsimony**: This method seeks to minimize the evolutionary change required to explain the data. In other words, the tree with the fewest common ancestors is most likely. It does not rely on models of evolution and is a character-based method (utilizes 4 nucleotides or 20 amino acids).
 
 **Method**|**Strengths**|**Limitations**|**Assumptions**
 :-----:|:-----:|:-----:|:-----:
@@ -339,9 +351,9 @@ Uses parsimony-based randomized stepwise addition order starting trees - note th
 
 IQ-TREE also provides [a guide](http://www.iqtree.org/doc/Assessing-Phylogenetic-Assumptions) to assess phylogenetic assumptions that you can run through before performing phylogenetic analyses. Though this seems optimized for partitioned datasets (multi-gene alignments).
 
-**Method**|**Strengths**|**Limitations**|**Assumptions**|**Usage notes**
-:-----:|:-----:|:-----:|:-----:|:-----:
-| IQ-TREE | •Recommended in a recent review for accuracy [Lees et al., 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5930550/) <br /> •Identified as best performer for concatenation-based species tree inference in [Zhou et al., 2018](https://academic.oup.com/mbe/article/35/2/486/4644721) <br /> •Comprehensive [documentation](http://www.iqtree.org/doc/) <br /> •Fast <br /> •Avoids redundant likelihood calculations on a terrace <br /> •IQTree shows lower variance of trees compared to RAxML-NG, so may require fewer replicate searches to find best scoring tree |  •Does not provide mechanism to move away from tree terraces | •  | •Has checkpoints and writes a log file <br /> •Can set max CPU and RAM usage! <br /> •Has option for ancestral state reconstruction <br /> •Default usage auto detects best-fit substitution model and performs [Ultrafast Bootstrap](https://academic.oup.com/mbe/article/35/2/518/4565479?login=true) and [SH-aLRT branch test](https://academic.oup.com/sysbio/article/59/3/307/1702850?login=true) <br /> •Has a web server where can run trees online through a GUI <br /> •-rf to compute RF distances between tree sets |
+**Method**|**Strengths**|**Limitations**|**Usage notes**
+:-----:|:-----:|:-----:|:-----:
+| IQ-TREE | •Recommended in a recent review for accuracy [Lees et al., 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5930550/) <br /> •Identified as best performer for concatenation-based species tree inference in [Zhou et al., 2018](https://academic.oup.com/mbe/article/35/2/486/4644721) <br /> •Comprehensive [documentation](http://www.iqtree.org/doc/) <br /> •Fast <br /> •Avoids redundant likelihood calculations on a terrace <br /> •IQTree shows lower variance of trees compared to RAxML-NG, so may require fewer replicate searches to find best scoring tree |  •Does not provide mechanism to move away from tree terraces | •Has checkpoints and writes a log file <br /> •Can set max CPU and RAM usage! <br /> •Has option for ancestral state reconstruction <br /> •Default usage auto detects best-fit substitution model and performs [Ultrafast Bootstrap](https://academic.oup.com/mbe/article/35/2/518/4565479?login=true) and [SH-aLRT branch test](https://academic.oup.com/sysbio/article/59/3/307/1702850?login=true) <br /> •Has a web server where can run trees online through a GUI <br /> •-rf to compute RF distances between tree sets |
 
 Relevant links and references:
 
@@ -393,26 +405,100 @@ Relevant links and references:
 
 In Bayesian methods, your prior knowledge about your data is incorporated as **priors**, used in the likelihood estimation of phylogenies and the parameters based on your data, and then results in a distribution of trees and parameters, also known as the **posterior distribution**. Considerations in Bayesian phylogenetic analysis that are distinct from maximum likelihood inference include: what prior model should I choose? What assumptions are included in the priors are how do those affect inference? With sufficient data, the priors do not matter and the correct tree will be found. With non-informative flat priors, Bayesian analysis is the same as maximum likelihood inference. The benefit of completing a Bayesian analysis with flat priors it that you obtain the posterior distribution of the phylogenetic trees and the parameters, rather than one single tree that has the highest likelihood.
 
-Bayesian inference uses MCMC chains to search the space of posterior distributions. This must be done for every parameter included. When you obtain results of a Bayesian phylogenetic analysis, it is very important to consider **mixing, convergence, and burnin**. Mixing refers to how well you navigated the parameter space. Convergence is if you reached all regions of high posterior values. Burnin is how long it takes to reach regions of high posterior values - if you have a bad prior, this time can be very long and prevent the MCMC chain from reaching areas of high posterior value. To assess these aspects, look at **trace plots** using a program such as [Tracer]().
+Bayesian inference uses MCMC chains to search the space of posterior distributions. This must be done for every parameter included. The user has to specify the number of iterations of the MCMC chain, and then decide whether the chain is long enough or additional iterations are necessary using diagnosis tools. When determining if the chain has run long enough, you need to consider **mixing, convergence, and burnin**. Mixing refers to how well you navigated the parameter space. Convergence is if you reached all regions of high posterior values. Burnin is how long it takes to reach regions of high posterior values - if you have a bad prior, this time can be very long and prevent the MCMC chain from reaching areas of high posterior value. To assess these aspects, look at **trace plots** using a program such as [Tracer](https://www.beast2.org/tracer-2/). 
+
+The posterior probability of the phylogeny is approximated by the number of times that phylogeny is sampled from the posterior. If it is sampled more, it has a higher posterior probability. 
+
+It is recommended that you run Bayesian analyses/the MCMC chain without data. Programs will generate empty alignments that can be used for this purpose. This ensures the software runs correctly (do the results match the theoretical prior?), and can be used to compare this run to a run with real data.
 
 **Method**|**Strengths**|**Limitations**|**Assumptions**
 :-----:|:-----:|:-----:|:-----:
-| Bayesian | •Can incorporate biologically relevant data into tree calculation <br /> •Can use flat priors to conduct a max likelihood search and obtain the distribution of max likelihood trees | •Can be difficult to choose priors and know if they are accurate <br /> •Slow | •The tree space was sufficiently traversed <br /> •The MCMC converged <br /> •The same assumptions as likelihood |
+| Bayesian | •Can incorporate biologically relevant data into tree calculation <br /> •Can use flat priors to conduct a max likelihood search and obtain the distribution of max likelihood trees | •Can be difficult to choose priors and know if they are accurate <br /> •Slow <br /> •Can be computationally prohibitive for large datasets | •The tree space was sufficiently traversed <br /> •The MCMC converged <br /> •The same assumptions as likelihood |
 
 Relevant links and references:
 
-* [HALS 1.2](https://hal.archives-ouvertes.fr/hal-02535285v2/document)
+* [HALS 1.4](https://hal.archives-ouvertes.fr/hal-02535330/document)
 * [Lecture 12, Solis-Lemus](https://github.com/crsl4/phylogenetics-class/blob/master/lecture-notes/lecture12.pdf)
+* [Nascimento et al., 2017](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5624502/)
 
 #### **MrBayes**
 
-[explanation of method] 
+MrBayes 3 is a program for Bayesian inference and model choice across a large
+space of phylogenetic and evolutionary models. There are four steps to a typical Bayesian phylogenetic analysis using MrBayes: 1. Read the Nexus data file 2. Set the evolutionary model 3. Run the analysis 4. Summarize the samples. To understand the basic usage, check out the [wiki page](http://mrbayes.sourceforge.net/wiki/index.php/Tutorial#Tutorial:_A_Simple_Analysis). There is also a run through in this [tutorial](http://hydrodictyon.eeb.uconn.edu/eebedia/index.php/Phylogenetics:_MrBayes_Lab), though the priors set here did not work for me because I did not have partitioned alignment data. The MrBayes block you add to the end of the nexus file was strange and new to me so note this in the tutorials. You can also accomplish the same thing typing these commands at the MrBayes prompt.
 
 **Method**|**Strengths**|**Limitations**|**Assumptions**|**Usage notes**
 :-----:|:-----:|:-----:|:-----:|:-----:
-| MyBayes | • <br /> • |  •    | •  | •Has option to initiate MCMC on a randomized stepwise addition order parsimony |
+| MyBayes | • <br /> • |  •Max 99 character names and very picky about symbols in names   | •  | •Has option to initiate MCMC on a randomized stepwise addition order parsimony <br /> •Input format needs to be nexus (can export in this format using Geneious)  <br /> •F81 is default substitution model <br /> •Default num. of discrete categories used to approx. gamma distribution = 4 <br /> •Default prior probability density is flat Dirichlet (all values are 1.0) <br /> •By default MrBayes runs two simultaneous, independent analyses starting from different random trees (Nruns = 2) <br /> •MrBayes will by default discard the first 25% samples from the cold chain and uses Metropolis coupling to improve the MCMC sampling of the target distribution.|
 
 Relevant links and references:
 
-* [MrBayes: ]()
+* [MrBayes3.2: Ronquist et al., 2012](https://academic.oup.com/sysbio/article/61/3/539/1674894?login=true)
+* [MrBayes3: Ronquist and Huelsenbeck, 2003](https://academic.oup.com/bioinformatics/article/19/12/1572/257621?login=true)
+
+#### **MrBayes commands**
+
+1. First run MrBayes with no data so you can see the characteristics of the prior distribution. Make sure the input names in your nex file are less than 99 characters and do not have single quotes around them:
+```
+conda activate mrbayes
+
+mb -i dsrC_PlumeViruses_Refs_mafftAuto_masked_renamed.nex
+
+mcmc data=no ngen=1000000 samplefreq=100
+```
+Output:
+![](mrbayes_nodata_output.png)
+
+MrBayes format is funky. You can also add code blocks at the end of your input file which will automatically run what you want so you don't have to type it at the prompt. For example adding this to the end of the dsrC_PlumeViruses_Refs_mafftAuto_masked_renamed.nex file does the same as the above 2 step command:
+```
+begin mrbayes;
+   mcmc data=no ngen=1000000 samplefreq=100;
+end;
+```
+
+2. Now run MrBayes with your data and priors and 10,000 iterations of MCMC. First, cp the original nexus file to a new file and add a MrBayes block to run the Bayesian analysis:
+```
+nano dsrC_PlumeViruses_Refs_mafftAuto_masked_renamed_BayesBlock.nex
+```
+
+Here we establish the mrbayes block. prset is to set priors. The branch lengths prior (brlenspr) is unconstrained, meaning without a molecular clock. The exponential prior parameter is set to 10.0 because it is recommended in the manual as working well for most analyses because it allows a wide range of branch length values (theoretically from 0 to infinity). mcmc generates the MCMC chain, and here you can specify the number of generations, sampling frequency from the chain, print frequency from the chain, the number of runs, and the number of chains. A safe number of generations where you are likely to have convergence is 1 million. 
+```
+begin mrbayes;
+ set autoclose=yes;
+ prset brlenspr=unconstrained:exp(10.0);
+ prset aamodelpr=mixed;
+ mcmcp ngen=10000 samplefreq=10 printfreq=100 nruns=1 nchains=3 savebrlens=yes;
+ mcmc;
+ sumt;
+end;
+```
+
+Now try 1 million iterations:
+```
+begin mrbayes;
+ set autoclose=yes;
+ prset brlenspr=unconstrained:exp(10.0);
+ prset aamodelpr=mixed;
+ mcmcp ngen=1000000 samplefreq=10 printfreq=100 nruns=1 nchains=3 savebrlens=yes;
+ mcmc;
+ sumt;
+end;
+```
+
+This is how you show model parameters in the MrBayes prompt.
+```
+Showmodel
+```
+![Output of Showmodel command](mrbayes_showmodel.png)
+
+When the MCMC chain is running it should look like this. This should be running automatically if you correctly inserted the MrBayes code block at the end of your nexus file.
+```
+mcmc
+```
+![Initial output of mcmc command](mrbayes_mcmc.png)
+
+Deciding what to include in your mrbayes block can be confusing. I recommend looking at these resources to understand the different options:
+
+* [Evolutionary Models Implemented in MrBayes 3](http://mrbayes.sourceforge.net/wiki/index.php/Evolutionary_Models_Implemented_in_MrBayes_3)
+* [MrBayes 3.2 Manual](http://mrbayes.sourceforge.net/mb3.2_manual.pdf)
+
 
