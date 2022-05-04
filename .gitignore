@@ -1,6 +1,7 @@
 ## this project
 side-docs/*
 data/*
+mr_bayes/*
 
 # Compiled source #
 ###################
@@ -148,3 +149,9 @@ Backup[ ]of[ ]*.numbers/
 ### Mathematica
 *.nb
 .Rproj.user
+
+### MrBayes
+*.nex.p*
+*.nex.t*
+*.trpobs
+
