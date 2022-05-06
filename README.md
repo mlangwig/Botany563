@@ -484,6 +484,19 @@ begin mrbayes;
 end;
 ```
 
+Try 2 million and use sump to get more summary stats:
+```
+begin mrbayes;
+ set autoclose=yes;
+ prset brlenspr=unconstrained:exp(10.0);
+ prset aamodelpr=mixed;
+ mcmcp ngen=2000000 samplefreq=10 printfreq=100 nruns=1 nchains=3 savebrlens=yes;
+ mcmc;
+ sump;
+ sumt;
+end;
+```
+
 This is how you show model parameters in the MrBayes prompt.
 ```
 Showmodel
@@ -500,5 +513,19 @@ Deciding what to include in your mrbayes block can be confusing. I recommend loo
 
 * [Evolutionary Models Implemented in MrBayes 3](http://mrbayes.sourceforge.net/wiki/index.php/Evolutionary_Models_Implemented_in_MrBayes_3)
 * [MrBayes 3.2 Manual](http://mrbayes.sourceforge.net/mb3.2_manual.pdf)
+
+Also, I realized this is the best way to run mrbayes to make sure you get all the output information written to a logfile:
+```
+mb dsrC_PlumeViruses_Refs_mafftAuto_masked_renamed_BayesBlock.nex > logfile.log
+```
+
+3. Run Tracer on the MCMC run file (.p file/s). Download tracer [here](https://github.com/beast-dev/tracer/releases) and then upload the nex.p file to Tracer. Tracer is a graphical interface so download it on your personal computer rather than a server to visualize the output and distribution of the parameters/posterior probability. The ESS values should be over 200, they will appear in a red color if they are too low. If they are low for the different parameters that is an indication that the chain needs to be run longer. 
+
+Check out [this tutorial](http://beast.community/analysing_beast_output) on how to use Tracer. And [this tutorial](http://beast.community/tracer_convergence) to understand how you can identify convergence problems using Tracer.
+
+
+
+
+
 
 
