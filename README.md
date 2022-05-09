@@ -267,7 +267,7 @@ Homologous regions identified using fast Fourier transform (FFT), where amino ac
 
 **Method**|**Strengths**|**Limitations**|**Usage notes**
 :-----:|:-----:|:-----:|:-----:
-| MAFFT | •Faster than ClustalW and T-COFFEE <br /> •Has high accuracy options (slower, L-INS-i and G-INS-i) <br /> •Compared against other aligners and was among top performers | •  | •BLOSUM62 matrix by default for AA, 200PAM for DNA <br /> •Default gap opening penalty is 1.53 |
+| MAFFT | •Faster than ClustalW and T-COFFEE <br /> •Has high accuracy options (slower, L-INS-i and G-INS-i) <br /> •Compared against other aligners and was among top performers | •Like most aligners, fails with highly divergent sequences  | •BLOSUM62 matrix by default for AA, 200PAM for DNA <br /> •Default gap opening penalty is 1.53 |
 
 References:
 
@@ -301,7 +301,7 @@ Distance trees fit a tree to a matrix of pairwise genetic distances. First, pair
 
 Substitution models used to calculate the evolutionary distance are worth reviewing in and of themselves. They are used in all phylogenetic methods and can have a major effect on tree inference. A lot of new programs have options to test the best substitution model that fits your data. Here is a resource further explaining distance methods and substitution models (evolutionary models): [Nakhlel](https://www.cs.rice.edu/~nakhleh/COMP571/Slides/Phylogenetics-DistanceMethods-Full.pdf)
 
-**Neighbor Joining**: [explanation of method]
+**Neighbor Joining**
 
 **Method**|**Strengths**|**Limitations**|**Assumptions**
 :-----:|:-----:|:-----:|:-----:
@@ -389,9 +389,9 @@ nohup iqtree -s dsrC_PlumeViruses_Refs_renamed_mafftAuto_masked.fasta -T AUTO -n
 
 RAxML-NG is RAxML Next Generation. It is the successor of RAxML and claims to be faster, easier to use, and more flexible than the previous version. **Importantly, this version includes checkpointing so trees can be resumed if the run is stopped.** This is the most up to date RAxML version and includes new options that are relevant to current phylogenetic research (e.g., tree terraces). The search heuristic iteratively performs Subtree Pruning and Regrafting (SPR) moves during the tree search. Some random notes on usage: Stamatakis recommends checking the Robinson-Foulds distances between all pairs of starting trees to determine how many distinct trees are in the starting set. Also, RAxML-NG uses the same parsimony-based randomized stepwise addition order starting trees as IQ-Tree, so care should be taken that the tree space has been sufficiently searched. 
 
-**Method**|**Strengths**|**Limitations**|**Assumptions**|**Usage notes**
-:-----:|:-----:|:-----:|:-----:|:-----:
-| RAxML-NG | •Recommended in a recent review for accuracy [Lees et al., 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5930550/) <br /> •Has checkpointing! <br /> •Documentation is [comprehensive](https://github.com/amkozlov/raxml-ng/wiki/Tutorial) <br /> •Can detect tree terraces <br /> •Avoids redundant likelihood calculations on a terrace <br /> •Computes transfer bootstrap expectation (TBE), better suited for well-supported deep splits in large trees | •Does not provide mechanism to move away from tree terraces  | • | •-rfdist to determine how many distinct trees the starting tree set has <br /> •Uses lazy SPR move for tree search <br /> •Default optimizes all free model parameters (substitution rates, alpha, and branch lengths) <br /> •Uses checkpoints, parallelization, and writes a log file <br /> •Has option for ancestral state reconstruction |
+**Method**|**Strengths**|**Limitations**|**Usage notes**
+:-----:|:-----:|:-----:|:-----:
+| RAxML-NG | •Recommended in a recent review for accuracy [Lees et al., 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5930550/) <br /> •Has checkpointing! <br /> •Documentation is [comprehensive](https://github.com/amkozlov/raxml-ng/wiki/Tutorial) <br /> •Can detect tree terraces <br /> •Avoids redundant likelihood calculations on a terrace <br /> •Computes transfer bootstrap expectation (TBE), better suited for well-supported deep splits in large trees | •Does not provide mechanism to move away from tree terraces | •-rfdist to determine how many distinct trees the starting tree set has <br /> •Uses lazy SPR move for tree search <br /> •Default optimizes all free model parameters (substitution rates, alpha, and branch lengths) <br /> •Uses checkpoints, parallelization, and writes a log file <br /> •Has option for ancestral state reconstruction |
 
 Relevant links and references: 
 
@@ -413,7 +413,7 @@ It is recommended that you run Bayesian analyses/the MCMC chain without data. Pr
 
 **Method**|**Strengths**|**Limitations**|**Assumptions**
 :-----:|:-----:|:-----:|:-----:
-| Bayesian | •Can incorporate biologically relevant data into tree calculation <br /> •Can use flat priors to conduct a max likelihood search and obtain the distribution of max likelihood trees | •Can be difficult to choose priors and know if they are accurate <br /> •Slow <br /> •Can be computationally prohibitive for large datasets | •The tree space was sufficiently traversed <br /> •The MCMC converged <br /> •The same assumptions as likelihood |
+| Bayesian | •Can incorporate biologically relevant data into tree calculation <br /> •Can use flat priors to conduct a max likelihood search and obtain the distribution of max likelihood trees <br /> •Can be easier to interpret, e.g. posterior probability of a clade is the sum of the posterior probs of all trees with that clade | •Can be difficult to choose priors and know if they are accurate <br /> •Slow <br /> •Can be computationally prohibitive for large datasets | •The tree space was sufficiently traversed <br /> •The MCMC converged <br /> •The same assumptions as likelihood |
 
 Relevant links and references:
 
@@ -426,14 +426,19 @@ Relevant links and references:
 MrBayes 3 is a program for Bayesian inference and model choice across a large
 space of phylogenetic and evolutionary models. There are four steps to a typical Bayesian phylogenetic analysis using MrBayes: 1. Read the Nexus data file 2. Set the evolutionary model 3. Run the analysis 4. Summarize the samples. To understand the basic usage, check out the [wiki page](http://mrbayes.sourceforge.net/wiki/index.php/Tutorial#Tutorial:_A_Simple_Analysis). There is also a run through in this [tutorial](http://hydrodictyon.eeb.uconn.edu/eebedia/index.php/Phylogenetics:_MrBayes_Lab), though the priors set here did not work for me because I did not have partitioned alignment data. The MrBayes block you add to the end of the nexus file was strange and new to me so note this in the tutorials. You can also accomplish the same thing typing these commands at the MrBayes prompt.
 
-**Method**|**Strengths**|**Limitations**|**Assumptions**|**Usage notes**
-:-----:|:-----:|:-----:|:-----:|:-----:
-| MyBayes | • <br /> • |  •Max 99 character names and very picky about symbols in names   | •  | •Has option to initiate MCMC on a randomized stepwise addition order parsimony <br /> •Input format needs to be nexus (can export in this format using Geneious)  <br /> •F81 is default substitution model <br /> •Default num. of discrete categories used to approx. gamma distribution = 4 <br /> •Default prior probability density is flat Dirichlet (all values are 1.0) <br /> •By default MrBayes runs two simultaneous, independent analyses starting from different random trees (Nruns = 2) <br /> •MrBayes will by default discard the first 25% samples from the cold chain and uses Metropolis coupling to improve the MCMC sampling of the target distribution.|
+When testing priors and running analyses, keep in mind that one sign your priors are weird is when the analysis is taking a long time - if the signal in your data is strong enough, the MCMC chain is guaranteed to find the optimal tree(s) given an infinite time to search. But if you established a prior that is pulling the search space in a strange direction or keeping the tree moves in a narrow range, it will take forever to find the highest probability trees. It can be hard to identify this way sometimes because Bayesian analysis and MCMC chains can take a long time irrespective of the priors so don't expect them to be done quickly every time :)
+
+**Note when using MrBayes that the .nex.t file can get large because they contain the trees and branch lengths.**
+
+**Method**|**Strengths**|**Limitations**|**Usage notes**
+:-----:|:-----:|:-----:|:-----:
+| MrBayes | •Several helpful tutorials online with step by step examples <br /> •Fast for small datasets |  •Max 99 character names and very picky about symbols in names <br /> •Does not appear to have the LG model for amino acid data | •Has option to initiate MCMC on a randomized stepwise addition order parsimony <br /> •Input format needs to be nexus (can export in this format using Geneious)  <br /> •F81 is default substitution model <br /> •Default num. of discrete categories used to approx. gamma distribution = 4 <br /> •Default prior probability density is flat Dirichlet (all values are 1.0) <br /> •By default MrBayes runs two simultaneous, independent analyses starting from different random trees (Nruns = 2) <br /> •MrBayes will by default discard the first 25% samples from the cold chain and uses Metropolis coupling to improve the MCMC sampling of the target distribution.|
 
 Relevant links and references:
 
 * [MrBayes3.2: Ronquist et al., 2012](https://academic.oup.com/sysbio/article/61/3/539/1674894?login=true)
 * [MrBayes3: Ronquist and Huelsenbeck, 2003](https://academic.oup.com/bioinformatics/article/19/12/1572/257621?login=true)
+* [Bayesian phylogenetic analysis using MRBAYES](https://www2.ib.unicamp.br/profs/sfreis/SistematicaMolecular/Aula11MetodoBayesiano/Leituras/ThePhylogeneticHandbookInferenciaBayesiana.pdf)
 
 #### **MrBayes commands**
 
@@ -445,10 +450,8 @@ mb -i dsrC_PlumeViruses_Refs_mafftAuto_masked_renamed.nex
 
 mcmc data=no ngen=1000000 samplefreq=100
 ```
-Output:
-![](mrbayes_nodata_output.png)
 
-MrBayes format is funky. You can also add code blocks at the end of your input file which will automatically run what you want so you don't have to type it at the prompt. For example adding this to the end of the dsrC_PlumeViruses_Refs_mafftAuto_masked_renamed.nex file does the same as the above 2 step command:
+MrBayes format was difficult for me to get used to. You can also add code blocks at the end of your input file which will automatically run what you want so you don't have to type it at the prompt. For example adding this to the end of the dsrC_PlumeViruses_Refs_mafftAuto_masked_renamed.nex file does the same as the above 2 step command:
 ```
 begin mrbayes;
    mcmc data=no ngen=1000000 samplefreq=100;
@@ -460,7 +463,7 @@ end;
 nano dsrC_PlumeViruses_Refs_mafftAuto_masked_renamed_BayesBlock.nex
 ```
 
-Here we establish the mrbayes block. prset is to set priors. The branch lengths prior (brlenspr) is unconstrained, meaning without a molecular clock. The exponential prior parameter is set to 10.0 because it is recommended in the manual as working well for most analyses because it allows a wide range of branch length values (theoretically from 0 to infinity). mcmc generates the MCMC chain, and here you can specify the number of generations, sampling frequency from the chain, print frequency from the chain, the number of runs, and the number of chains. A safe number of generations where you are likely to have convergence is 1 million. 
+Here we establish the mrbayes block. prset is to set priors. The branch lengths prior (brlenspr) is unconstrained, meaning without a molecular clock. The exponential prior parameter is set to 10.0 because it is recommended in the manual as working well for most analyses because it allows a wide range of branch length values (theoretically from 0 to infinity). mcmc generates the MCMC chain, and here you can specify the number of generations, sampling frequency from the chain, print frequency from the chain, the number of runs, and the number of chains. Here I will try a small number of generations (10,000) to make sure everything is running. 
 ```
 begin mrbayes;
  set autoclose=yes;
@@ -472,7 +475,7 @@ begin mrbayes;
 end;
 ```
 
-Now try 1 million iterations:
+Now try 1 million iterations. Note there is no "good" number of MCMC iterations. You have to keep going until you can be confident you have convergence.
 ```
 begin mrbayes;
  set autoclose=yes;
@@ -497,12 +500,6 @@ begin mrbayes;
 end;
 ```
 
-This is how you show model parameters in the MrBayes prompt.
-```
-Showmodel
-```
-![Output of Showmodel command](mrbayes_showmodel.png)
-
 When the MCMC chain is running it should look like this. This should be running automatically if you correctly inserted the MrBayes code block at the end of your nexus file.
 ```
 mcmc
@@ -514,18 +511,46 @@ Deciding what to include in your mrbayes block can be confusing. I recommend loo
 * [Evolutionary Models Implemented in MrBayes 3](http://mrbayes.sourceforge.net/wiki/index.php/Evolutionary_Models_Implemented_in_MrBayes_3)
 * [MrBayes 3.2 Manual](http://mrbayes.sourceforge.net/mb3.2_manual.pdf)
 
-Also, I realized this is the best way to run mrbayes to make sure you get all the output information written to a logfile:
+Also, I realized this is the best way to run MrBayes to make sure you get all the output information written to a log file:
 ```
 mb dsrC_PlumeViruses_Refs_mafftAuto_masked_renamed_BayesBlock.nex > logfile.log
 ```
 
-3. Run Tracer on the MCMC run file (.p file/s). Download tracer [here](https://github.com/beast-dev/tracer/releases) and then upload the nex.p file to Tracer. Tracer is a graphical interface so download it on your personal computer rather than a server to visualize the output and distribution of the parameters/posterior probability. The ESS values should be over 200, they will appear in a red color if they are too low. If they are low for the different parameters that is an indication that the chain needs to be run longer. 
+3. Once you have MrBayes results, run Tracer on the MCMC run file (.p file/s) to assess convergence. Download Tracer [here](https://github.com/beast-dev/tracer/releases) and then upload the nex.p file to Tracer. Tracer is a graphical interface so download it on your personal computer rather than a server to visualize the output and distribution of the parameters/posterior probability. The ESS values should be over 200, they will appear in a red color if they are too low. If they are low for the different parameters that is an indication that the chain needs to be run longer. 
 
 Check out [this tutorial](http://beast.community/analysing_beast_output) on how to use Tracer. And [this tutorial](http://beast.community/tracer_convergence) to understand how you can identify convergence problems using Tracer.
 
+See example Tracer output here:
 
+![Tracer results for 1 million iterations](Tracer_output1mill.png)
 
+![Tracer results for 2 million iterations](Tracer_output2mill.png)
 
+#### **Running MrBayes using stopval**
 
+Notice from the Tracer results shown above that the number of generations you use can be misleading - with 1 million iterations it looked like we had convergence, but 2 million showed we were just stuck in a local optimum. So, I'm going to try this command to allow the chain to go until the convergence diagnostic is below .01. The convergence diagnostic is the average standard deviation of the split frequencies. I found the command in this [tutorial](https://www.ebi.ac.uk/sites/ebi.ac.uk/files/content.ebi.ac.uk/materials/2013/130923_Slovenia/mrbayes.pdf).
+
+```
+mkdir stopval_run
+```
+Change MrBayes block to this:
+```
+begin mrbayes;
+ set autoclose=yes;
+ prset brlenspr=unconstrained:exp(10.0);
+ prset aamodelpr=mixed;
+ mcmcp ngen=3000000 samplefreq=10 printfreq=100 nruns=2 nchains=4 temp=0.2 mcmcdiagn=yes diagnfreq=1000 stoprule=yes stopval=0.1;
+ mcmc;
+ sumt;
+end;
+```
+
+Run it:
+```
+mb dsrC_PlumeViruses_Refs_mafftAuto_masked_renamed_BayesBlock.nex > logfile.log
+```
+The	analysis will stop automatically either when the convergence diagnostic hits the specified	value, or	when the maximum number of generations (specified	by the mcmcp option ngen) has been reached.
+
+The run stopped at the stop values of .01 but the chain was not yet at convergence according to the Tracer plots. Thus, I didn't include these results in the final analysis because further tesitng is required, potentially experimenting with lower stop values.
 
 
